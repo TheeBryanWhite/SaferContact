@@ -1,12 +1,26 @@
 'use strict';
 
-module.exports.sayHello = async function(context, req) {
-  context.log('JavaScript HTTP trigger function processed a request.');
+module.exports.staticSiteMailer = async function(context, req) {
+  const formData = JSON.parse(event.body);
 
-  if (req.query.name || (req.body && req.body.name)) {
+  if (formData) {
     context.res = {
       // status: 200, /* Defaults to 200 */
-      body: 'Hello ' + (req.query.name || req.body.name),
+      sendEmail(formData, function mailCB(err, data) {
+        const response = {
+          statusCode: err ? 502 : 200,
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "Content-Type",
+            "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
+          },
+          body: JSON.stringify({
+            message: err ? err.message : data,
+          }),
+        };
+        
+        callback(null, response);
+      });
     };
   } else {
     context.res = {
