@@ -99,11 +99,29 @@ export default class ContactForm extends React.Component {
         if (!this.state.postnobills.length > 0) {
 
             const formData = {
-                "name": this.state.name.value,
-                "email": this.state.email.value,
-                "phone": this.state.phone.value,
-                "company": this.state.company.value,
-                "message": this.state.message.value
+                "from": {
+                    "email": "noreply@safercontact.com"
+                },
+                "personalizations": [
+                    {
+                      "to": [
+                        {
+                          "email": "bryan@3pt.design"
+                        }
+                      ],
+                      "subject": "A submission from the Safer Contact contact form"
+                    }
+                ],
+                "content": [
+                    {
+                        "type": "text/plain",
+                        "value": 'Name: ' + this.state.name.value + '\n' +
+                                 'Email: ' + this.state.email.value + '\n' +
+                                 'Phone: ' + this.state.phone.value + '\n' +
+                                 'Company: ' + this.state.company.value + '\n \n' +
+                                 'Message \n' + this.state.message.value
+                    }
+                ]
             }
 
             let isThisValid = this.validateForm();
@@ -113,7 +131,7 @@ export default class ContactForm extends React.Component {
             }
 
             axios.post(
-                '', formData, {
+                'https://scmailsend.azurewebsites.net/send', formData, {
                 headers: { 
                 'Accept': 'application/json; charset=utf-8',
                 'Content-Type': 'application/json; charset=UTF-8'

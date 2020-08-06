@@ -10,7 +10,7 @@ const ContactPage = () => {
 
   return (
     <Layout>
-      <SEO title="SkyLytics - Contact Us" />
+      <SEO title="SaferContact - Contact Us" />
         <div className="contact-form">
             <h2>Contact us</h2>
             <h3>Safer Contact</h3>
