@@ -3,6 +3,5 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
-exports.onInitialClientRender = () => {
-    require("typeface-quicksand");
-};
+import "typeface-quicksand";
+import "typeface-nunito-sans";

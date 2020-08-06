@@ -4,14 +4,14 @@ import { useStaticQuery, graphql } from "gatsby";
 import BackgroundImage from 'gatsby-background-image'
 
 import Header from "../header/header";
-import Footer from "../footer/footer";
+import HomeFooter from "../footer/home-footer";
 import "./layout.scss";
 import "../../utils/normalize.css";
 
-const Layout = ({ children }) => {
+const HomeLayout = ({ children }) => {
 
   const data = useStaticQuery(graphql`
-    query TitleQuery {
+    query HomeTitleQuery {
       site {
         siteMetadata {
           menuLinks {
@@ -35,26 +35,27 @@ const Layout = ({ children }) => {
 
   return (
     <>
-    <Header menuData={data.site.siteMetadata.menuLinks} />
+    <Header menuData={data.site.siteMetadata.menuLinks} headerClass="home" />
       <BackgroundImage
         Tag="main"
+        className="home"
         fluid={imageData}
         backgroundColor={`#000`}
       >
         {children}
       </BackgroundImage>
-    <Footer siteTitle="Skylytics Data LLC" />
+    <HomeFooter siteTitle="Skylytics Data LLC" footerClass="home" />
     </>
   )
 }
 
-Layout.propTypes = {
+HomeLayout.propTypes = {
   children: PropTypes.node.isRequired,
   siteTitle: PropTypes.string
 }
 
-Layout.defaultProps = {
+HomeLayout.defaultProps = {
   siteTitle: ``
 }
 
-export default Layout;
+export default HomeLayout;

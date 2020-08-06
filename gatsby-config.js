@@ -4,9 +4,14 @@ module.exports = {
     description: 'Boilerplate starter project for ThreePoint Collective web projects',
     menuLinks: [
       {
-        class: '',
-        name: '',
-        link: ''
+        class: 'login',
+        name: 'Login',
+        link: 'http://app.safercontact.com/'
+      },
+      {
+        class: 'contact-us',
+        name: 'Contact Us',
+        link: '/contact-us'
       }
     ],
     phone: '(555) 555-5555',
@@ -47,7 +52,7 @@ module.exports = {
     //   },
     // },
     // 'gatsby-plugin-offline',
-    // 'gatsby-plugin-react-helmet',
+    'gatsby-plugin-react-helmet',
     // {
     //   resolve: 'gatsby-plugin-sitemap',
     //   options: {
@@ -68,7 +73,15 @@ module.exports = {
     //     output: '/robots.txt',
     //     sitemap: ''
     //   },
-    // },    
+    // },  
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /svg/ // See below to configure properly
+        }
+      }
+    },  
     'gatsby-plugin-sass',
     'gatsby-plugin-sharp',
     'gatsby-plugin-transition-link',
@@ -85,6 +98,26 @@ module.exports = {
         path: `${__dirname}/src`,
       },
     },
+    {
+      resolve: `@ccalamos/gatsby-source-googlemaps-static`,
+      options: {
+        key: `AIzaSyB-to2lJwJ93QnMRaEHnVBfPmTmEBIxCoI`,
+        paths: [
+          {
+              color: `0x00000000`,
+              weight: `5`,
+              fillColor: `0xFF0000`,
+              points: [
+                  `42.785102, -71.509988`,
+                  `42.784929, -71.509658`,
+                  `42.784583, -71.509996`,
+                  `42.784768, -71.510331`,
+              ],
+          },
+        ],
+        zoom: 17
+      },
+  },
     'gatsby-transformer-sharp'
   ],
 }

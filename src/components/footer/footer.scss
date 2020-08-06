@@ -1,3 +1,62 @@
 @import "../sass/mixins.scss";
 
-footer {}
+footer {
+    background-color: color(orange);
+    font-family: family(links);
+    padding: 32px 16px;
+    width: 100%;
+
+    &.home {
+        bottom: 0;
+        position: fixed;
+    }
+
+    .container {
+        align-items: center;
+        display: flex !important;
+        flex-wrap: wrap;
+        height: 60px;
+        justify-content: space-around;
+
+        div {
+            flex: 1 1 100%;
+            text-align: center;
+
+            @include respond-to(iphonesPlusL) {
+                flex: 1 1 auto;
+            }
+        }
+
+        .copyright {
+            font-size: toRem(12);
+            margin: 0;
+            order: 2;
+            text-transform: uppercase;
+
+            @include respond-to(iphonesPlusL) {
+                display: flex;
+                order: 1;
+            }
+
+            p {
+                margin-bottom: 0;
+            }
+        }
+
+        .footer-logo {
+            margin-bottom: 1rem;
+            order: 1;
+
+            @include respond-to(iphonesPlusL) {
+                margin-bottom: 0;
+                order: 2;
+                text-align: right;
+            }
+        }
+    }
+
+    svg {
+        fill: color(white);
+        width: 240px;
+    }
+}

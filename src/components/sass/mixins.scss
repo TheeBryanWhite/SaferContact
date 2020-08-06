@@ -512,12 +512,15 @@ $white: #fff;
 $black: #000;
 $gray: #767676;
 $blue: #00aaec;
+$orange: #D57D32;
 
 //scss-lint:disable ColorVariable
 $colors: (
     white: $white,
     black: $black,
     gray: $gray,
+    blue: $blue,
+    orange: $orange,
     validation-color: #d9534f,
     fileupload-border: #ddd,
     fileupload-color: #aaa,
@@ -605,10 +608,12 @@ $z-index: (
 }
 
 
-$base-stack: "Raleway", Helvetica, Arial, sans-serif;
+$base-stack: "Quicksand", Helvetica, Arial, sans-serif;
+$link-stack: "Nunito Sans", Helvetica, Arial, sans-serif;
 
 $fonts: (
-    base: $base-stack
+    base: $base-stack,
+    links: $link-stack
 );
 
 @function family($key) {
@@ -668,7 +673,7 @@ $col) {
 //  */
 
 ::selection {
-    background: color(black);
+    background: color(orange);
     color: color(white);
     text-shadow: none;
 }
@@ -684,6 +689,7 @@ html {
 }
 
 body {
+    color: color(white);
     font-family: family(base);
     font-style: normal;
     font-weight: 400;
@@ -691,7 +697,7 @@ body {
 }
 
 a {
-    color: color(black);
+    color: color(white);
 }
 
 .group {
@@ -704,4 +710,9 @@ a {
 
 main {
     padding: 0 2rem;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
 }

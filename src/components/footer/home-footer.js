@@ -7,7 +7,7 @@ import "./footer.scss"
 const theDate = new Date()
 const theYear = theDate.getFullYear();
 
-const Footer = ({ siteTitle, footerClass }) => {
+const HomeFooter = ({ siteTitle, footerClass }) => {
 
   return (
     <footer className={footerClass}>
@@ -23,14 +23,14 @@ const Footer = ({ siteTitle, footerClass }) => {
   )
 }
   
-Footer.propTypes = {
+HomeFooter.propTypes = {
   footerClass: PropTypes.string,
   siteTitle: PropTypes.string
 }
 
-Footer.defaultProps = {
+HomeFooter.defaultProps = {
   footerClass: ``,
   siteTitle: ``
 }
 
-export default Footer;
+export default HomeFooter;

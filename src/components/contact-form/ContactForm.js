@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 
-import '../sass/contact.scss'
+import '../../pages/contact.scss'
 
 export default class ContactForm extends React.Component {
 
@@ -207,7 +207,6 @@ export default class ContactForm extends React.Component {
                     />
                 </div>
                 <div className="row submit-container">
-                    <span className="mask">Send</span>
                     <button type="submit">Send</button>
                 </div>
             </form>
