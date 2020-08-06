@@ -106,7 +106,7 @@ export default class ContactForm extends React.Component {
                     {
                       "to": [
                         {
-                          "email": "bryan@3pt.design"
+                          "email": "info@safercontact.com"
                         }
                       ],
                       "subject": "A submission from the Safer Contact contact form"
