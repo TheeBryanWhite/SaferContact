@@ -98,26 +98,6 @@ module.exports = {
         path: `${__dirname}/src`,
       },
     },
-    {
-      resolve: `@ccalamos/gatsby-source-googlemaps-static`,
-      options: {
-        key: `AIzaSyB-to2lJwJ93QnMRaEHnVBfPmTmEBIxCoI`,
-        paths: [
-          {
-              color: `0x00000000`,
-              weight: `5`,
-              fillColor: `0xFF0000`,
-              points: [
-                  `42.785102, -71.509988`,
-                  `42.784929, -71.509658`,
-                  `42.784583, -71.509996`,
-                  `42.784768, -71.510331`,
-              ],
-          },
-        ],
-        zoom: 17
-      },
-  },
     'gatsby-transformer-sharp'
   ],
 }
