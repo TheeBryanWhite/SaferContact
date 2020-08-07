@@ -109,17 +109,13 @@ export default class ContactForm extends React.Component {
                           "email": "info@safercontact.com"
                         }
                       ],
-                      "subject": "A submission from the Safer Contact contact form"
+                      "subject": "A submission from the SaferContact contact form from " + this.state.company.value 
                     }
                 ],
                 "content": [
                     {
                         "type": "text/plain",
-                        "value": 'Name: ' + this.state.name.value + '\n' +
-                                 'Email: ' + this.state.email.value + '\n' +
-                                 'Phone: ' + this.state.phone.value + '\n' +
-                                 'Company: ' + this.state.company.value + '\n \n' +
-                                 'Message \n' + this.state.message.value
+                        "value": `Good news, everyone! We just got a submission from the SaferContact Contact Form from ${formData.name}\n\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCompany: ${formData.company}\n\nMessage\n${formData.message}`
                     }
                 ]
             }
