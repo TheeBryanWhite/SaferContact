@@ -20,16 +20,6 @@ module.exports = {
   },
   plugins: [
     'gatsby-background-image',
-    // Uncomment when Prismic repo is setup
-    // {
-    //   resolve: 'gatsby-source-prismic-graphql',
-    //     options: {
-    //       accessToken: '',
-    //       omitPrismicScript: true,
-    //       repositoryName: '',
-    //   }
-    // },
-    // Uncomment when in production
     // {
     //   resolve: 'gatsby-plugin-google-tagmanager',
     //   options: {
@@ -39,46 +29,46 @@ module.exports = {
     //     routeChangeEventName: "gatsby-route-change",
     //   },
     // },
-    // {
-    //   resolve: 'gatsby-plugin-manifest',
-    //   options: {
-    //     name: 'ThreePoint Collective Starter',
-    //     short_name: 'ThreePoint',
-    //     start_url: '/',
-    //     background_color: '#000',
-    //     theme_color: '#fff',
-    //     display: 'minimal-ui',
-    //     icon: 'src/images/triangle.png', // This path is relative to the root of the site.
-    //   },
-    // },
-    // 'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'SaferContact',
+        short_name: 'SaferContact',
+        start_url: '/',
+        background_color: '#000',
+        theme_color: '#fff',
+        display: 'minimal-ui',
+        icon: 'src/images/triangle.png',
+      },
+    },
+    'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
-    // {
-    //   resolve: 'gatsby-plugin-sitemap',
-    //   options: {
-    //     exclude: [
-    //       '/preview',
-    //     ],
-    //   },
-    // },
-    // {
-    //   resolve: 'gatsby-plugin-robots-txt',
-    //   options: {
-    //     host: '',
-    //     policy: [{
-    //       userAgent: '*',
-    //       allow: '/',
-    //       disallow: '/site-mailer'
-    //     }],
-    //     output: '/robots.txt',
-    //     sitemap: ''
-    //   },
-    // },  
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        exclude: [
+          '/preview',
+        ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: '',
+        policy: [{
+          userAgent: '*',
+          allow: '/',
+          disallow: '/site-mailer'
+        }],
+        output: '/robots.txt',
+        sitemap: ''
+      },
+    },  
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /svg/ // See below to configure properly
+          include: /svg/
         }
       }
     },  
