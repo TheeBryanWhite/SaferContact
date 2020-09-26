@@ -15,7 +15,7 @@ const AnonymousTracing = props => {
 				<div className="column">
 					<h2>Anonymous Contact Tracing In The Workplace</h2>
 					<p>Safercontact™ uses proximity-sensing technology that monitors social distance without identity or location information. This way, personal privacy is protected, so employees feel safe, not tracked.</p>
-					<p className="cta"><a href="/" target="_blank" rel="noreferrer">Get Product Info</a></p>
+					<p className="cta"><a href="/#platform-solution" target="_blank" rel="noreferrer">Get Product Info</a></p>
 				</div>
 			</div>
 			<CirclesSvg className="bottom-right" />

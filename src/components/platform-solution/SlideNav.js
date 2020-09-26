@@ -27,25 +27,13 @@ const SlideNav = props => {
 		}
 	}
 
-	// On clicking a nav pip...
 	const clickHandler = slide => {
-
-		// Disable the autoslide animation...
 		props.setAutoSlide(props.autoSlide)
-
-		// If the slider JUST loaded and hasn't updated state for the second slide...
 		if (typeof props.activeSlide !== 'undefined') {
-			// If we click on the first element...
 			if (slide === 0 && props.activeSlide === 0 ) {
-				// Disable to slider animation
-				// Leave the default activeSlide prop
-				// Update the inactiveSlide prop to the last item in the list
 				stopAutoSlide()
 				props.setInactiveSlide(3)
 			} else {
-				// Disable the slider animation
-				// Set the prop for inactive slide to be the last one clicked on
-				// Set the prop for the new active slide
 				stopAutoSlide()
 				props.setInactiveSlide(props.activeSlide)
 				props.setSlide(slide)

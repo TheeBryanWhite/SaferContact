@@ -17,7 +17,7 @@ const PlatformSolution = props => {
 					<h2>How it Works</h2>
 					<p>Safercontact™ utilizes ultra-wideband (UWB) devices and gateways to monitor proximity and duration of closeness. Each device captures real-time proximity data and maintains a contact list of interactions with other devices. When the device comes within range of a gateway, the contact list syncs with the safercontact application. The Safercontact platform allows authorized users to quickly and effectively identify potential exposure and risk. Dedicated Azure environments store the Safercontact™ data. Wether you have 5 employees or 5,000, Safercontact™ will be able to provide a solution.</p>
 					<p><small>Get in touch with the safercontact™ team to see how they can help your business get back safely.</small></p>
-					<p className="cta"><Link to="/#contact">Contact Sales Team</Link></p>
+					<p className="cta"><Link to="/#contact-us">Contact Sales Team</Link></p>
 				</div>
 				
 				<div className="column slider">
