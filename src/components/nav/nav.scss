@@ -56,8 +56,13 @@ nav {
 	}
 
 	.sign-in {
-		position: absolute;
-		right: 0;
+		padding: 0 toRem(16);
+
+		@include respond-to(large) {
+			padding: 0;
+			position: absolute;
+			right: 0;
+		}
 
 		a {
 			background-color: rgba(color(white), 0.3);
