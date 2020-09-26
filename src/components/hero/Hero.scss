@@ -17,6 +17,7 @@
 
 	video {
 		bottom: 0;
+		display: none;
 		height: auto;
 		left: 0;
 		position: absolute;
@@ -25,6 +26,7 @@
 		width: auto;
 
 		@include respond-to(medium) {
+			display: block;
 			width: 100%;
 		}
 	}
