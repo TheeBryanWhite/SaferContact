@@ -46,6 +46,7 @@
 		
         button {
 			@include cta;
+			font-size: toRem(20);
 
 			&:hover {
 				@include ctahover;

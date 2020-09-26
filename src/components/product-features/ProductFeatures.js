@@ -44,7 +44,7 @@ const ProductFeatures = () => {
 					</div>
 					<div className="feature">
 						<div className="wrapper">
-							<h3>Cloud or On-Premises</h3>
+							<h3>Cloud or On&#8209;Premises</h3>
 							<p>Safercontact can be deployed either as a Cloud solution fully managed by Skylytics, or if needed deployed by an organization in their own cloud environment or on-premises, offering full flexibility and choice.</p>
 						</div>
 					</div>
