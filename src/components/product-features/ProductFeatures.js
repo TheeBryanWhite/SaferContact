@@ -15,7 +15,7 @@ const ProductFeatures = () => {
 					<div className="feature">
 						<div className="wrapper">
 							<h3>Anonymous Tracing</h3>
-							<p>Safercontact™ uses anonymous tag-to-tag communication which preserves employees’ privacy and protects their personal security needs.</p>
+							<p>Safercontact uses anonymous tag-to-tag communication which preserves employees’ privacy and protects their personal security needs.</p>
 						</div>
 					</div>
 					<div className="feature">
@@ -33,25 +33,25 @@ const ProductFeatures = () => {
 					<div className="feature">
 						<div className="wrapper">
 							<h3>Visual Dashboard</h3>
-							<p>Safercontact™ utilizes a visual network effect graphically maping all tag to tag contact tracing events.  This allows for quick and accurate risk analysis by aurthorized personel.</p>
+							<p>Safercontact utilizes a visual network effect graphically mapping all tag to tag contact tracing events.  This allows for quick and accurate risk analysis by authorized personnel.</p>
 						</div>
 					</div>
 					<div className="feature">
 						<div className="wrapper">
 							<h3>Platform Solution</h3>
-							<p>Safercontact™ is a platform solution, not a point solution.  While protecting your work force today, Safercontact can be used beyond COVID-19 adding value and protection to your business.</p>
+							<p>Safercontact is a platform solution, not a point solution.  While protecting your work force today, Safercontact can be used beyond COVID-19 as a versitile IoT solution.</p>
 						</div>
 					</div>
 					<div className="feature">
 						<div className="wrapper">
-							<h3>Hosted or Dedicated</h3>
-							<p>Safercontact™ can be deployed either as a Cloud solution fully managed by Skylytics, or if needed deployed by an organization in their own cloud environment or on-premises, offering full flexibility and choice.</p>
+							<h3>Cloud or On-Premises</h3>
+							<p>Safercontact can be deployed either as a Cloud solution fully managed by Skylytics, or if needed deployed by an organization in their own cloud environment or on-premises, offering full flexibility and choice.</p>
 						</div>
 					</div>
 					<div className="feature">
 						<div className="wrapper">
-							<h3>Subscription Based</h3>
-							<p>With Safercontact™ you only pay for the number of employees or devices that you need on an annual or monthly subscription basis.</p>
+							<h3>Flexible Pricing Models</h3>
+							<p>With Safercontact you only pay for the number of employees or devices that you need on an annual or monthly subscription basis. Let our sales team recommend a solution for your business needs.</p>
 						</div>
 					</div>
 					<p className="cta"><Link to="/#platform-solution">Learn More</Link></p>

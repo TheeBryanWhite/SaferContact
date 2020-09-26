@@ -26,7 +26,7 @@ const VideoBlock = props => {
 			</video>
 			<div className="overlay">
 				<div className="body container">
-					<h2>Safercontact™ Protects The Health And Well-Being of Your Employees</h2>
+					<h2>Safercontact Protects The Health And Well-Being of Your Employees</h2>
 				</div>
 			</div>
 			<CirclesSvg className="bottom-left" />

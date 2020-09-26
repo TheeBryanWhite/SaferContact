@@ -14,11 +14,11 @@ const ContactUs = () => {
 				<div className="column contact-body">
 					<div className="connect">
 						<h2><MailSvg />Connect with Us</h2>
-						<p>Safercontact™ Protects The Health and Well-Being of Your Employees</p>
+						<p>Safercontact Helps Protect The Health and Well-Being of Your Employees</p>
 					</div>
 					<div className="demo">
 						<h2><ScheduleSvg />Schedule a Demo</h2>
-						<p>Book a Demo today to see how Safercontact™ can provide a secure, accurate, scalable, and anomyous contact tracing  solution for your company.</p>
+						<p>Book a Demo today to see how Safercontact can provide a secure, accurate, scalable, and anonymous contact tracing  solution for your company.</p>
 						<p className="cta"><a href="/">Book a Demo Today</a></p>
 					</div>
 				</div>

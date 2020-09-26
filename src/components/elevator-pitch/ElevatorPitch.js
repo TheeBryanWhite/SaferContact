@@ -7,8 +7,7 @@ const ElevatorPitch = () => {
 	return(
 		<section className="elevator-pitch pad-this" id="about">
 			<div className="container">
-				<p>The health and well-being of your business and those who work there is paramount. Safercontact™ offers a dynamic contact tracing solution that is secure, accurate, scalable, and most of all anonymous.</p>
-				<p><em>Workplace Contact Tracing, Not Personal Tracking</em></p>
+				<p><i>The health and well-being of your business and those who work there is paramount. Safercontact offers a dynamic contact tracing solution that is secure, accurate, scalable, and anonymous.</i></p>
 			</div>
 			<CirclesSvg className="bottom-left" />
 		</section>

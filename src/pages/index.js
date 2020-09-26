@@ -21,7 +21,10 @@ const IndexPage = ({data}) => {
       <ElevatorPitch />
       <AnonymousTracing atData={data.anonymousTracing} />
       <VideoBlock vbData={data.vbPoster} />
-      <PlatformSolution psData={data.psImages} />
+      <PlatformSolution 
+        contentData={data.allPlatformSolutionJson.edges}
+        psData={data.psImages}
+      />
       <ProductFeatures />
       <ImageBlock ibData={data.ibImage} />
       <ContactUs />
@@ -42,6 +45,15 @@ query hpQuery {
     childImageSharp {
       fluid(maxWidth: 1000) {
         ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+  allPlatformSolutionJson(sort: {fields: id, order: ASC}) {
+    edges {
+      node {
+        body
+        id
+        title
       }
     }
   }

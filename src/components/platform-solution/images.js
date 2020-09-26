@@ -26,10 +26,10 @@ const Images = props => {
 					className={classBuilder(index)}
 					id={`slide-${index}`}
 					key={figure.node.id}>
-					<h3>...Tag Recognition</h3>
+					<h3>{props.contentData[index].node.title}</h3>
 					<Image fluid={figure.node.childImageSharp.fluid} alt="Alt text for the image" />
 					<div className="slide-body">
-						<p>When Tag 1 comes into range of Tag 2, they synchronize and add to contact lists. Tags will alert users if they are closer than 6 feet of other devices through both auditable and visual cues.</p>
+						<p>{props.contentData[index].node.body}</p>
 					</div>
 				</div>
 			))

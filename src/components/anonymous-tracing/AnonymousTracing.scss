@@ -24,13 +24,13 @@
 		font-family: family(heavy);
 
 		@include respond-to(large) {
-			font-size: toRem(40);
+			font-size: toRem(34);
 		}
 	}
 
 	@include respond-to(large) {
 		p {
-			font-size: toRem(28);
+			font-size: toRem(22);
 		}
 	}
 

@@ -3,6 +3,7 @@
 .elevator-pitch {
 	background-color: color(orange);
 	color: color(white);
+	font-family: family(heavy);
 	font-size: toRem(18);
 	position: relative;
 
@@ -10,17 +11,13 @@
 		font-size: toRem(28);
 	}
 
-	p {
-		font-style: italic;
-		margin: 0;
+	@include respond-to(large) {
+		font-size: toRem(43);
 	}
 
-	em {
-		display: inline-block;
-		font-family: family(heavy);
-		font-size: toRem(20);
-		font-style: normal;
-		font-weight: 700;
-		margin-top: toRem(32);
+	@include respond-to(large) {
+		.pad-this {
+			padding: 100px 0;
+		}
 	}
 }

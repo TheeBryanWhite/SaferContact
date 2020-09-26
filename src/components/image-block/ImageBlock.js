@@ -14,7 +14,7 @@ const ImageBlock = props => {
 			<CirclesSvg className="top-left" />
 			<div className="overlay">
 				<div className="container body">
-					<h2>Safercontact™ Offers A Dynamic Solution That Is Secure, Accurate, Scalable, and Anonymous</h2>
+					<h2>Safercontact Offers A Dynamic Solution That Is Secure, Accurate, Scalable, and Anonymous</h2>
 				</div>
 			</div>
 			<CirclesSvg className="bottom-right" />
