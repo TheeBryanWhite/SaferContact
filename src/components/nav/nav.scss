@@ -55,6 +55,23 @@ nav {
 		}
 	}
 
+	.sign-in {
+		position: absolute;
+		right: 0;
+
+		a {
+			background-color: rgba(color(white), 0.3);
+			border: 1px solid color(white);
+			border-radius: 4px;
+			padding: 5px 10px;
+			transition: background-color 0.2s linear;
+
+			&:hover {
+				background-color: transparent;
+			}
+		}
+	}
+
 	.nav-closure {
 		height: 100%;
 		position: fixed;

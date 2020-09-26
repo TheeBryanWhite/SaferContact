@@ -30,7 +30,9 @@ const Nav = props => {
                 </Link>
               </li>
             ))
-          }</ul>
+          }
+          <li className="sign-in"><a href="http://app.safercontact.com/" target="_blank" rel="noreferrer">Sign In</a></li>
+          </ul>
           <MobileClose />
         </div>
         <Hamburger />
