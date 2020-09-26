@@ -53,6 +53,11 @@ nav {
 		@include respond-to(large) {
 			padding: 0 toRem(10);
 		}
+
+		&.active {
+			font-family: family(heavy);
+			font-weight: 700;
+		}
 	}
 
 	.sign-in {

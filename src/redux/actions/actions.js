@@ -7,6 +7,13 @@ export const contactFormSubmit = (data) => (dispatch) => {
   })
 }
 
+export const setActiveSection = (data) => (dispatch) => {
+  dispatch({
+    type: types.SET_ACTIVE_SECTION,
+    payload: data,
+  })
+}
+
 export const setAutoSlide = (data) => (dispatch) => {
   dispatch({
     type: types.SET_AUTO_SLIDE,

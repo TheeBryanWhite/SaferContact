@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import {graphql} from 'gatsby'
 
 import Hero from '../components/hero/Hero'
@@ -14,18 +14,6 @@ import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
 
 const IndexPage = ({data}) => {
-
-  useEffect(() => {
-		// sectionObj()
-  }, []);
-
-  const sectionObj = () => {
-    const sections = document.getElementsByTagName('section')
-
-    sections[0].forEach(section => {
-      console.log(section)
-    })
-  }
   
   return (
     <Layout>

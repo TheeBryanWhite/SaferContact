@@ -61,7 +61,7 @@ const Layout = (props) => {
         }
       }
     }
-  `);
+  `)
 
   return (
     <>

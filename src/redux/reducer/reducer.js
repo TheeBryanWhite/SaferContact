@@ -1,5 +1,6 @@
 import { types } from "../constants/types";
 const initialState = {
+  activeSection: 'home',
   activeSlide: 0,
   autoSlide: true,
   contactFormSubmit: false,
@@ -15,6 +16,12 @@ export default (state = initialState, action) => {
         ...state, 
         contactFormSubmit: action.payload
      }
+
+     case types.SET_ACTIVE_SECTION:
+      return { 
+        ...state, 
+        activeSection: action.payload 
+      }
 
     case types.SET_AUTO_SLIDE:
       return { 

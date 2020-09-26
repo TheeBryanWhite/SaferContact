@@ -11,7 +11,6 @@ const VideoBlock = props => {
 		<BackgroundImage
 			className="video-block"
 			fluid={props.vbData.childImageSharp.fluid}
-			id="video-block"
 			Tag="section"
 		>
 			<CirclesSvg className="top-right" />
