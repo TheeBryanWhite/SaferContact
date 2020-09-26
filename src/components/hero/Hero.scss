@@ -58,6 +58,10 @@
 		@include respond-to(medium) {
 			margin: 50px 0;
 		}
+
+		@include respond-to(xlarge) {
+			font-size: 56px;
+		}
 	}
 
 	p {
@@ -81,5 +85,9 @@
 
 	.cta {
 		font-size: 1.7vw;
+
+		@include respond-to(small) {
+			font-size: toRem(20);
+		}
 	}
 }
