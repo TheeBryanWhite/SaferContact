@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {setFixNav} from '../../redux/actions/actions'
 import SuperHeader from './super-header'
 import Nav from '../nav/nav'
+import window from 'global/window'
 
 import './header.scss'
 
