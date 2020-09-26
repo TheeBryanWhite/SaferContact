@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {graphql} from 'gatsby'
 
 import Hero from '../components/hero/Hero'
@@ -14,6 +14,19 @@ import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
 
 const IndexPage = ({data}) => {
+
+  useEffect(() => {
+		// sectionObj()
+  }, []);
+
+  const sectionObj = () => {
+    const sections = document.getElementsByTagName('section')
+
+    sections[0].forEach(section => {
+      console.log(section)
+    })
+  }
+  
   return (
     <Layout>
       <SEO title="Home" description="Site description" />
@@ -41,9 +54,9 @@ query hpQuery {
       }
     }
   }
-  anonymousTracing: file(relativePath: {eq: "images/safercontact_anamyous_screen.jpg"}) {
+  anonymousTracing: file(relativePath: {eq: "images/safercontact_anamyous_screen.png"}) {
     childImageSharp {
-      fluid(maxWidth: 1000) {
+      fluid(maxWidth: 600) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }

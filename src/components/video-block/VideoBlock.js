@@ -12,7 +12,7 @@ const VideoBlock = props => {
 			className="video-block"
 			fluid={props.vbData.childImageSharp.fluid}
 			id="video-block"
-			tag="section"
+			Tag="section"
 		>
 			<CirclesSvg className="top-right" />
 			<video 

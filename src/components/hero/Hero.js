@@ -12,7 +12,7 @@ const Hero = props => {
 			className="hero"
 			fluid={props.heroData.childImageSharp.fluid}
 			id="hero"
-			tag="section"
+			Tag="section"
 		>
 			<video 
 				autoPlay

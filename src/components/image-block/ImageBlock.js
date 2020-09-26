@@ -9,7 +9,7 @@ const ImageBlock = props => {
 		<BackgroundImage
 			className="image-block"
 			fluid={props.ibData.childImageSharp.fluid}
-			tag="section"
+			Tag="section"
 		>
 			<CirclesSvg className="top-left" />
 			<div className="overlay">
