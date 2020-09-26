@@ -40,23 +40,30 @@ nav {
 		width: 100%;
 
 		@include respond-to(large) {
+			margin: 0 toRem(10);
 			width: auto;
 		}
 	}
 
 	a {
+		border-bottom: 2px solid rgba(color(white), 0);
 		color: color(white);
 		display: block;
 		padding: toRem(8) toRem(16);
+		transition: all 0.4s linear;
 		width: 100%;
 
 		@include respond-to(large) {
-			padding: 0 toRem(10);
+			padding: 0;
 		}
 
 		&.active {
 			font-family: family(heavy);
 			font-weight: 700;
+		}
+
+		&:hover {
+			border-bottom: 2px solid rgba(color(white), 1);
 		}
 	}
 
@@ -78,6 +85,7 @@ nav {
 
 			&:hover {
 				background-color: transparent;
+				text-decoration: none;
 			}
 		}
 	}
