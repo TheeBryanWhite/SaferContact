@@ -1,7 +1,7 @@
 import React from 'react'
 import {graphql} from 'gatsby'
 
-import Hero from '../components/hero/hero'
+import Hero from '../components/hero/Hero'
 import ElevatorPitch from '../components/elevator-pitch/ElevatorPitch'
 import AnonymousTracing from '../components/anonymous-tracing/AnonymousTracing'
 import VideoBlock from '../components/video-block/VideoBlock'
