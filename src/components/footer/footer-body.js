@@ -21,13 +21,13 @@ const FooterBody = props => {
 					</ul>
 					<ul className="social">
 						<li>
-							<a href="http://linkedin.com" target="_blank" rel="noreferrer">
+							<a href="https://www.linkedin.com/company/safercontact" target="_blank" rel="noreferrer">
 								<LinkedInSvg />
 								<span className="screen-reader-text">Follow safercontact on LinkedIn</span>
 							</a>
 						</li>
 						<li>
-							<a href="http://twitter.com" target="_blank" rel="noreferrer">
+							<a href="http://twitter.com/safercontact" target="_blank" rel="noreferrer">
 								<TwitterSvg />
 								<span className="screen-reader-text">Follow safercontact on Twitter</span>
 							</a>
