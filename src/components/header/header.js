@@ -1,43 +1,42 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import AniLink from "gatsby-plugin-transition-link/AniLink"
-import Logo from "./svg/logo.svg"
-
+import {connect} from 'react-redux'
+import {setFixNav} from '../../redux/actions/actions'
+import SuperHeader from './super-header'
 import Nav from '../nav/nav'
 
 import './header.scss'
 
-const Header = ({menuData}) => (
-  <header>
-      <div className="nav-container">
-      <div className="container">
-          <Nav menu={menuData} />
-        </div>
-      </div>
-      <div className="logo">
-        <div className="container">
-          <h1>
-            <AniLink 
-              cover
-              direction="left"
-              bg="#767676"
-              to="/"
-            >
-              <span className="screen-reader-text">SaferContact<span>TM</span></span>
-              <Logo />
-            </AniLink>
-          </h1>
-        </div>
-      </div>
-  </header>
-)
+const Header = props => {
+  const header = React.createRef()
 
-Header.propTypes = {
-	menuData: PropTypes.array,
-}
-  
-Header.defaultProps = {
-	menuData: ``,
+	// Fix the nav position if the header scrolls OFF the page
+	window.onscroll = () => {
+		if (!props.fixNav && window.pageYOffset > header.current.getBoundingClientRect().bottom) {
+      props.setFixNav(props.fixNav)
+    }
+    
+    // Unfix the nav position if the header scrolls ON the page
+    if (props.fixNav && window.pageYOffset < header.current.getBoundingClientRect().bottom) {
+      props.setFixNav(props.fixNav)
+		}
+  }
+
+  return (
+    <header 
+      id="home"
+      ref={header}
+    >
+      <SuperHeader
+        subtitle={props.subtitle}
+        title={props.title}
+      />
+      <Nav navData={props.navData} />
+    </header>
+  )
 }
 
-export default Header
+const mapStateToProps = state => ({
+  fixNav: state.app.fixNav
+})
+
+export default connect(mapStateToProps, { setFixNav })(Header)

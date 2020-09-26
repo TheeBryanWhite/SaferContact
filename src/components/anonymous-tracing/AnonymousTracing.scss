@@ -1,0 +1,53 @@
+@import "../sass/mixins.scss";
+
+.anonymous-tracing {
+	color: color(blue);
+	position: relative;
+
+	@include respond-to(small) {
+		.columns {
+			align-items: center;
+			display: flex;
+		}
+	}
+
+	.column {
+		margin: toRem(25) 0;
+
+		@include respond-to(small) {
+			flex: 1 0 50%;
+			padding: 0 toRem(16);
+		}
+	}
+
+	h2 {
+		font-family: family(heavy);
+
+		@include respond-to(large) {
+			font-size: toRem(40);
+		}
+	}
+
+	@include respond-to(large) {
+		p {
+			font-size: toRem(28);
+		}
+	}
+
+	.cta {
+		display: inline-block;
+		margin-top: 20px;
+
+		a {
+			@include cta;
+
+			&:hover {
+				@include ctahover;
+			}
+		}
+	}
+}
+
+#anonymous-tracing.shift-this {
+	transform: translateY(-250px);
+}

@@ -28,7 +28,7 @@ audio,
 canvas,
 progress,
 video {
-  display: inline-block;
+  display: block;
 }
 audio:not([controls]) {
   display: none;
@@ -329,6 +329,7 @@ ul {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
+  list-style: none;
   list-style-position: outside;
   list-style-image: none;
 }
@@ -609,26 +610,115 @@ pre tt:after {
   }
 }
 
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+::selection {
+  background: color(black);
+  color: color(white);
+  text-shadow: none;
+}
+
 html {
-  overflow: hidden;
-  width: 100vw;
+  box-sizing: border-box;
 }
 
 body {
-  color: color(white);
+  color: color(black);
+  font-family: family(base);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.25;
 }
 
 a {
+  color: color(black);
   text-decoration: none;
 }
 
-
-.tl-wrapper {
-  height: 100vh;
+.group {
+  @include clearfix;
 }
 
-main.home {
-  height: 100vh;
-  padding: 0;
-  width: 100%;
+.screen-reader-text {
+  @include screen-reader-text;
+}
+
+.overlay {
+  background-color: rgba(color(black), 0.4);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: toRem(1200);
+  padding: 0 toRem(32);
+  position: relative;
+}
+
+.gradient-bg {
+  background: rgb(205,206,213);
+	background: linear-gradient(90deg, 
+				rgba(205,206,213,1) 0%,
+				rgba(239,239,241,1) 50%,
+				rgba(205,206,213,1) 100%);
+}
+
+.pad-this {
+  padding: toRem(65) 0;
+
+  @include respond-to(small) {
+    padding: toRem(85) 0;
+  }
+
+  @include respond-to(medium) {
+    padding: toRem(110) 0;
+  }
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 13vw;
+
+  @include respond-to(large) {
+    width: 9vw;
+  }
+}
+
+.bottom-right {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  transform: rotate(-90deg);
+  width: 9vw;
+}
+
+.top-left {
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: rotate(90deg);
+  width: 9vw;
+}
+
+.top-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: rotate(180deg);
+  width: 9vw;
+}
+
+.shift-this {
+  @include screen-reader-text;
+  transform: translateY(-300px);
 }

@@ -1,62 +1,168 @@
 @import "../sass/mixins.scss";
 
 footer {
-    background-color: color(orange);
-    font-family: family(links);
-    padding: 32px 16px;
-    width: 100%;
+	background-color: color(orange);
+	color: color(white);
+	padding: 50px 0;
 
-    &.home {
-        bottom: 0;
-        position: fixed;
-    }
+	h1 {
+		margin: 0;
+	}
 
-    .container {
-        align-items: center;
-        display: flex !important;
-        flex-wrap: wrap;
-        height: 60px;
-        justify-content: space-around;
+	h2 {
+		font-family: family(heavy);
+		font-size: toRem(21);
+		margin: 0;
+	}
 
-        div {
-            flex: 1 1 100%;
-            text-align: center;
+	p {
+		margin: 0;
+	}
 
-            @include respond-to(iphonesPlusL) {
-                flex: 1 1 auto;
-            }
-        }
+	a {
+		color: color(white);
 
-        .copyright {
-            font-size: toRem(12);
-            margin: 0;
-            order: 2;
-            text-transform: uppercase;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 
-            @include respond-to(iphonesPlusL) {
-                display: flex;
-                order: 1;
-            }
+	.logo {
+		width: 200px;
+	}
 
-            p {
-                margin-bottom: 0;
-            }
-        }
+	svg {
+		fill: color(white);
+	}
 
-        .footer-logo {
-            margin-bottom: 1rem;
-            order: 1;
+	.super-footer {
+		border-bottom: 1px solid color(white);		
+		padding-bottom: 20px;
 
-            @include respond-to(iphonesPlusL) {
-                margin-bottom: 0;
-                order: 2;
-                text-align: right;
-            }
-        }
-    }
+		.container {
+			display: flex;
+			flex-direction: column;
 
-    svg {
-        fill: color(white);
-        width: 240px;
-    }
+			@include respond-to(small) {
+				align-items: center;
+				flex-direction: row;
+				justify-content: space-between;
+				
+			}
+		}
+
+		p {
+			font-size: toRem(18);
+	
+			@include respond-to(small) {
+				font-size: toRem(24);
+				margin-bottom: toRem(7);
+			}
+		}
+	}
+
+	.footer-body {
+		padding: 20px 0;
+	}
+
+	.columns {
+		align-items: flex-start;
+		display: flex;
+		flex-direction: column;
+
+		@include respond-to(small) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+
+	.column {
+		order: 2;
+
+		@include respond-to(small) {
+			order: 1;
+		}
+	}
+
+	.column:nth-of-type(2) {
+		display: flex;
+		order: 1;
+
+		@include respond-to(small) {
+			order: 2;
+		}
+
+		div {
+			flex: 1;
+		}
+	}
+
+	.emails {
+		font-size: toRem(24);
+		font-style: italic;
+		margin-top: toRem(25);
+
+		@include respond-to(small) {
+			margin-top: 0;
+		}
+	}
+
+	.social {
+		display: flex;
+		margin-top: toRem(25);
+
+		li {
+			height: 47px;
+			margin-right: 10px;
+			width: 47px;
+		}
+	}
+	
+	.menu,
+	.address {
+		padding: 0 toRem(16);
+
+		@include respond-to(large) {
+			padding: 0;
+		}
+
+		p,
+		ul {
+			font-size: toRem(18);
+			margin-top: toRem(15);
+		}
+	}
+
+	@include respond-to(medium) {
+		.menu {
+			margin-right: toRem(38);
+		}
+	}
+
+	@media not all and (min-resolution:.001dpcm) {
+		.menu {
+			margin-right: toRem(8);
+		}
+	}
+
+	.sub-footer {
+		border-top: 1px solid color(white);
+		padding-top: 4px;
+
+		p {
+			margin-top: toRem(16);
+		}
+
+		@include respond-to(small) {
+			.columns {
+				flex-direction: column;
+			}
+		}
+
+		@include respond-to(medium) {
+			.columns {
+				flex-direction: row;
+			}
+		}
+	}
 }

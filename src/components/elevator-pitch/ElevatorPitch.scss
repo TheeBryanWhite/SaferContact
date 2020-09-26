@@ -1,0 +1,26 @@
+@import "../sass/mixins.scss";
+
+.elevator-pitch {
+	background-color: color(orange);
+	color: color(white);
+	font-size: toRem(18);
+	position: relative;
+
+	@include respond-to(medium) {
+		font-size: toRem(28);
+	}
+
+	p {
+		font-style: italic;
+		margin: 0;
+	}
+
+	em {
+		display: inline-block;
+		font-family: family(heavy);
+		font-size: toRem(20);
+		font-style: normal;
+		font-weight: 700;
+		margin-top: toRem(32);
+	}
+}

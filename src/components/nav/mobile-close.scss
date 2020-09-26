@@ -1,0 +1,48 @@
+@import '../sass/mixins.scss';
+
+.mobile-close {
+	height: 30px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 30px;
+	
+	@include respond-to(large) {
+		display: none;
+	}
+
+	button {
+		background-color: transparent;
+		border: 0;
+		cursor: pointer;
+		height: 30px;
+		position: absolute;
+		right: 25px;
+		top: 25px;
+		width: 30px;
+
+		&:before {
+			background-color: color(white);
+			content: '';
+			display: block;
+			height: 3px;
+			left: 0;
+			position: absolute;
+			top: 0;
+			transform: rotate(45deg);
+			width: 100%;
+		}
+
+		&:after {
+			background-color: color(white);
+			content: '';
+			display: block;
+			height: 3px;
+			left: 0;
+			position: absolute;
+			top: 0;
+			transform: rotate(-45deg);
+			width: 100%;
+		}
+	}
+}

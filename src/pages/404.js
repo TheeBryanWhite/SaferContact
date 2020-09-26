@@ -1,21 +1,14 @@
 import React from "react"
 
-import NFLayout from '../components/layout/404-layout'
+import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
 
-import "./home.scss";
-
-const NotFoundPage = () => {
-
-  return (
-  <NFLayout>
-    <SEO title="Safer Contact - 404: Not found" />
-      <div className="page-content">
-        <p>Quoth the raven...</p>
-        <h2>404</h2>
-      </div>
-  </NFLayout>
-  )
-}
+const NotFoundPage = () => (
+  <Layout>
+    <SEO title="404: Not found" />
+    <h1>NOT FOUND</h1>
+    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+  </Layout>
+)
 
 export default NotFoundPage

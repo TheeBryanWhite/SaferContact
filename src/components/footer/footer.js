@@ -1,36 +1,26 @@
-import PropTypes from "prop-types"
 import React from "react"
-import Logo from "./svg/skylytics-logo.svg"
+
+import SuperFooter from './super-footer'
+import FooterBody from './footer-body'
+import SubFooter from './sub-footer'
 
 import "./footer.scss"
 
-const theDate = new Date()
-const theYear = theDate.getFullYear();
-
-const Footer = ({ siteTitle, footerClass }) => {
-
-  return (
-    <footer className={footerClass}>
-      <div className="container">
-        <div className="copyright">
-          <p>&copy; {theYear} Copyright - All rights reserved - {siteTitle}</p>
-        </div>
-        <div className="footer-logo">
-        <Logo />
-        </div>
-      </div>
+const Footer = props => {
+  return (  
+    <footer>
+      <SuperFooter
+        subtitle={props.subtitle}
+        title={props.title}
+      />
+      <FooterBody 
+        addressData={props.addressData}
+        contactData={props.contactData}
+        navData={props.navData}
+      />
+      <SubFooter />
     </footer>
   )
 }
   
-Footer.propTypes = {
-  footerClass: PropTypes.string,
-  siteTitle: PropTypes.string
-}
-
-Footer.defaultProps = {
-  footerClass: ``,
-  siteTitle: ``
-}
-
-export default Footer;
+  export default Footer

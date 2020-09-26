@@ -1,32 +1,47 @@
-import PropTypes from "prop-types"
-import React from "react"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import React from 'react'
+import { connect } from 'react-redux'
+import { setMenu } from '../../redux/actions/actions'
+import { Link } from 'gatsby'
 
-import "./nav.scss";
+import Hamburger from './hamburger'
+import MobileClose from './mobile-close'
+import './nav.scss'
 
-const Nav = ({ menu }) => {
-
+const Nav = props => {
+  const clickHandler = () => {
+		props.setMenu(props.menuState)
+  }
+  
   return (
-    <nav>
-        <ul>
-        {
-            menu.map((navItem)=> (
-              <li key={navItem.name} className={navItem.class}>
-                <AniLink paintDrip to={navItem.link} hex="767676"><span>{navItem.name}</span></AniLink>
-            </li>
+    <nav className={(props.fixNav ? 'fixed' : '')}>
+      <div className="container">
+        <div className={`${props.menuState ? 'active-menu nav-closure' : 'nav-closure'}`}>
+          <ul>{
+            props.navData.map((navItem, index) => (
+            <li 
+              className={navItem.class}
+              key={index}
+              >
+                <Link
+                onClick={() => { clickHandler() }}
+                  to={navItem.link}
+                >
+                  {navItem.name}
+                </Link>
+              </li>
             ))
-        }
-        </ul>
+          }</ul>
+          <MobileClose />
+        </div>
+        <Hamburger />
+      </div>
     </nav>
   )
 }
 
-Nav.propTypes = {
-    menu: PropTypes.array,
-}
+const mapStateToProps = state => ({
+  fixNav: state.app.fixNav,
+	menuState: state.app.menuState
+})
   
-Nav.defaultProps = {
-    menu: ``,
-}
-
-export default Nav;
+export default connect(mapStateToProps, {setMenu})(Nav)

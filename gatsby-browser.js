@@ -3,5 +3,4 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
-import "typeface-quicksand";
-import "typeface-nunito-sans";
+export { default as wrapRootElement } from './src/redux/store/store';

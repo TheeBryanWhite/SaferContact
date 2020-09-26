@@ -1,0 +1,75 @@
+@import "../sass/mixins.scss";
+
+.contact-us {
+	color: color(blue);
+	position: relative;
+
+	@include respond-to(small) {
+		.columns {
+			align-items: stretcb;
+			display: flex;
+		}
+	}
+
+	@include respond-to(large) {
+		h2 {
+			font-size: toRem(34);
+		}
+
+		p {
+			font-size: toRem(20);
+		}
+	}
+
+	.column {
+		margin: toRem(25) 0;
+		padding: 0 toRem(16);
+
+		@include respond-to(small) {
+			flex: 1 0 50%;
+			padding: 0 toRem(16);
+		}
+	}
+
+	@include respond-to(large) {
+		.contact-body {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+	}
+
+	h2 {
+		font-family: family(heavy)
+	}
+
+	.demo,
+	.connect {
+		svg {
+			fill: color(blue);
+			margin-right: 10px;
+			transform: translateY(8px);
+			width: 42px;
+		}
+	}
+
+	.demo {
+		svg {
+			transform: translateY(12px);
+		}
+	}
+
+	.cta {
+		a {
+			@include cta;
+
+			&:hover {
+				@include ctahover;
+			}
+		}
+	}
+}
+
+#contact-us.shift-this {
+	transform: translateY(-150px);
+}

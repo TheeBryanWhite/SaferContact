@@ -510,9 +510,12 @@ $asset-base-path: './' !default;
 
 $white: #fff;
 $black: #000;
-$gray: #767676;
-$blue: #00aaec;
+$gray: #F2F2F2;
+$blue: #3f5170;
 $orange: #D57D32;
+$red: #fb5058;
+$gradientDark: #cdced5;
+$gradientLight: #EFEFF1;
 
 //scss-lint:disable ColorVariable
 $colors: (
@@ -521,10 +524,13 @@ $colors: (
     gray: $gray,
     blue: $blue,
     orange: $orange,
+    red: $red,
     validation-color: #d9534f,
     fileupload-border: #ddd,
     fileupload-color: #aaa,
-    input-border: #ccc
+    input-border: #ccc,
+    gradient-dark: $gradientDark,
+    gradient-light: $gradientLight
 );
 
 @function color($key) {
@@ -595,6 +601,7 @@ $breakpoints: (
 $z-index: (
     header: 1,
     botomless-pit: -99999,
+    mobile-nav: 9999,
     mount-everest: 99999
 );
 
@@ -607,13 +614,12 @@ $z-index: (
     @return null;
 }
 
-
-$base-stack: "Quicksand", Helvetica, Arial, sans-serif;
-$link-stack: "Nunito Sans", Helvetica, Arial, sans-serif;
+$base-stack: "Futura PT Book", futura-pt, Helvetica, Arial, sans-serif;
+$heavy-stack: "Futura PT Heavy", futura-pt, Helvetica, Arial, sans-serif;
 
 $fonts: (
     base: $base-stack,
-    links: $link-stack
+    heavy: $heavy-stack
 );
 
 @function family($key) {
@@ -665,54 +671,16 @@ $col) {
     color: $col;
 }
 
-
-//  /*
-//     ========================================
-//         ::Global Styles
-//     ========================================
-//  */
-
-::selection {
-    background: color(orange);
+@mixin cta() {
+    background-color: color(red);
+    border: 1px solid color(red);
+    border-radius: 7px;
     color: color(white);
-    text-shadow: none;
+    padding: toRem(5) toRem(15);
+    transition: all 0.4s ease(in-out-quart);
 }
 
-html {
-    box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
-}
-
-body {
-    color: color(white);
-    font-family: family(base);
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.25;
-}
-
-a {
-    color: color(white);
-}
-
-.group {
-    @include clearfix;
-}
-
-.screen-reader-text {
-    @include screen-reader-text;
-}
-
-main {
-    padding: 0 2rem;
-}
-
-.container {
-    margin: 0 auto;
-    max-width: 1200px;
+@mixin ctahover() {
+    background-color: transparent;
+    color: color(red);
 }

@@ -1,60 +1,67 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
-import BackgroundImage from 'gatsby-background-image'
+import Helmet from 'react-helmet'
+import { connect } from 'react-redux'
 
 import Header from "../header/header";
 import Footer from "../footer/footer";
 import "./layout.scss";
 import "../../utils/normalize.css";
 
-const Layout = ({ children }) => {
-
-  const data = useStaticQuery(graphql`
-    query TitleQuery {
+const Layout = (props) => {
+  const layoutQuery = useStaticQuery(graphql`
+    query SiteTitleQuery {
       site {
         siteMetadata {
+          address {
+            address1
+            address2
+            city
+            state
+            zip
+            phone
+          }
+          contact {
+						email
+					}
           menuLinks {
             class
-            name
             link
+            name
           }
-        }
-      },
-      desktop: file(relativePath: { eq: "components/layout/img/sc-background.png" }) {
-        childImageSharp {
-          fluid(quality: 90, maxWidth: 1920) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          subtitle
+          title
         }
       }
     }
   `);
 
-  const imageData = data.desktop.childImageSharp.fluid
-
   return (
     <>
-    <Header menuData={data.site.siteMetadata.menuLinks} />
-      <BackgroundImage
-        Tag="main"
-        fluid={imageData}
-        backgroundColor={`#000`}
-      >
-        {children}
-      </BackgroundImage>
-    <Footer siteTitle="Skylytics Data LLC" />
+      <Helmet>
+        <html className={(props.menuState ? 'locked' : '')} lang="en" />
+      </Helmet>
+      <Header 
+        navData={layoutQuery.site.siteMetadata.menuLinks}
+        subtitle={layoutQuery.site.siteMetadata.subtitle}
+        title={layoutQuery.site.siteMetadata.title}
+      />
+      <main>
+        {props.children}
+      </main>
+      <Footer
+        addressData={layoutQuery.site.siteMetadata.address}
+        contactData={layoutQuery.site.siteMetadata.contact}
+        navData={layoutQuery.site.siteMetadata.menuLinks}
+        subtitle={layoutQuery.site.siteMetadata.subtitle}
+        title={layoutQuery.site.siteMetadata.title}
+      />
     </>
   )
 }
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-  siteTitle: PropTypes.string
-}
+const mapStateToProps = state => ({
+  menuState: state.app.menuState
+})
 
-Layout.defaultProps = {
-  siteTitle: ``
-}
-
-export default Layout;
+export default connect(mapStateToProps, null)(Layout)

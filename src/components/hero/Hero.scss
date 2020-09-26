@@ -1,0 +1,75 @@
+@import "../sass/mixins.scss";
+
+.hero {
+	color: color(white);
+	height: 0;
+	overflow: hidden;
+	padding-top: 88%;
+	position: relative;
+
+	@include respond-to(small) {
+		padding-top: 75%;
+	}
+
+	@include respond-to(medium) {
+		padding-top: 55%;
+	}
+
+	video {
+		bottom: 0;
+		height: auto;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: auto;
+
+		@include respond-to(medium) {
+			width: 100%;
+		}
+	}
+
+	.body {
+		@include center;
+		width: 100%;
+	}
+
+	svg {
+		fill: color(white);
+		z-index: 1;
+	}
+
+	h1 {
+		display: inline-block;
+		width: 45%;
+	}
+
+	h2 {
+		font-family: family(heavy);
+		font-size: 4vw;
+		margin: 0 0 25px;;
+
+		@include respond-to(medium) {
+			margin: 50px 0;
+		}
+	}
+
+	p {
+		font-size: 3vw;
+
+
+		@include respond-to(medium) {
+			font-size: 2vw;
+		}
+	}
+
+	a {
+		@include cta;
+		display: inline-block;
+		margin-top: 10px;
+
+		&:hover {
+			@include ctahover;
+		}
+	}
+}

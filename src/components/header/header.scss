@@ -1,74 +1,43 @@
 @import "../sass/mixins.scss";
 
 header {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 100;
+	background-color: color(gray);
 
-    &.home {
-        position: fixed;
-    }
+	.super-header {
+		align-items: center;
+		color: color(orange);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		padding: toRem(25) 0;
 
-    a {
-        color: color(white);
-        display: block;
-    }
+		@include respond-to(small) {
+			justify-content: space-between;
+		}
+	}
 
-    ul {
-        display: flex;
-        justify-content: center;
+	.logo {
+		width: 250px;
+	}
 
-        @include respond-to(iphonesPlusL) {
-            justify-content: flex-end;
-        }
-    }
+	h1,
+	p {
+		margin: 0;
+	}
 
-    li {
-        font-size: toRem(16);
-        list-style: none;
-        margin: 0;
-    }
+	p {
+		font-size: toRem(18);
 
-    .nav-container {
-        background-color: rgba($black, 0.7);
-        font-family: family(links);
-        padding: 0 toRem(16);
-        text-transform: uppercase;
+		@include respond-to(small) {
+			margin-bottom: toRem(7);
+		}
 
-        a {
-            background-color: transparent;
-            padding: toRem(8) toRem(16);
-            transition: background-color .2s linear;
+		@include respond-to(medium) {
+			font-size: toRem(24);
+		}
+	}
 
-            &:hover {
-                background-color: $orange;
-            }
-        }
-    }
-
-    .logo {
-        margin: toRem(16);
-
-        h1 {
-            margin: 0;
-            text-align: center;
-
-            @include respond-to(iphonesPlusL) {
-                text-align: left;
-            }
-        }
-
-        svg {
-            width: 275px;
-
-            @include respond-to(iphonesPlusL) {
-                width: 375px;
-            }
-        }
-    }
-
-    svg {
-        fill: color(white);
-    }
+	svg {
+		fill: color(orange);
+	}
 }
