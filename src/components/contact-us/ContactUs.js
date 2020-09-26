@@ -8,8 +8,7 @@ import CirclesSvg from '../../svg/circles.svg'
 
 const ContactUs = () => {
 	return(
-		<section className="contact-us pad-this gradient-bg">
-			<button id="contact-us" className="shift-this">The Contact Us Section</button>
+		<section className="contact-us pad-this gradient-bg" id="contact-us">
 			<CirclesSvg className="top-right" />
 			<div className="container columns">
 				<div className="column contact-body">

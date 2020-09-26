@@ -6,8 +6,7 @@ import CirclesSvg from '../../svg/circles.svg'
 
 const ProductFeatures = () => {
 	return (
-		<section className="product-features blue-bg pad-this">
-			<button id="product-features" className="shift-this">The Product Features Section</button>
+		<section className="product-features blue-bg pad-this" id="product-features">
 			<CirclesSvg className="top-right" />
 			<div className="container">
 				<h2>Platform Features</h2>

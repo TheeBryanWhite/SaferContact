@@ -10,8 +10,7 @@ import CirclesSvg from '../../svg/circles.svg'
 
 const PlatformSolution = props => {
 	return(
-		<section className="platform-solution gradient-bg pad-this">
-			<button id="platform-solution" className="shift-this">The Platform Solution Section</button>
+		<section className="platform-solution gradient-bg pad-this" id="platform-solution">
 			<CirclesSvg className="top-left" />
 			<div className="container columns">
 				<div className="column body">

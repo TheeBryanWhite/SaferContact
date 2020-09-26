@@ -10,7 +10,29 @@ import "../../utils/normalize.css";
 
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
-  require("smooth-scroll")('a[href*="#"]')
+  require("smooth-scroll")('a[href*="#"]', {
+    offset: (anchor) => {
+      switch(anchor.getAttribute('id')) {
+        case 'about':
+          return 100;
+
+        case 'anonymous-tracing':
+          return 150;
+
+        case 'platform-solution':
+          return 75;
+
+        case 'product-features':
+          return 50;
+
+        case 'contact-us':
+          return 50;
+
+        default:
+          return 0;
+      }
+    }
+  })
 }
 
 const Layout = (props) => {

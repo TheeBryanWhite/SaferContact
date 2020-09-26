@@ -717,8 +717,3 @@ a {
   transform: rotate(180deg);
   width: 9vw;
 }
-
-.shift-this {
-  @include screen-reader-text;
-  transform: translateY(-300px);
-}

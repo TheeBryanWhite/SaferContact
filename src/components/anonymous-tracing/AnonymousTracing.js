@@ -6,8 +6,7 @@ import CirclesSvg from '../../svg/circles.svg'
 
 const AnonymousTracing = props => {
 	return(
-		<section className="anonymous-tracing gradient-bg pad-this">
-			<button id="anonymous-tracing" className="shift-this">The Anonymous Tracing Section</button>
+		<section className="anonymous-tracing gradient-bg pad-this"m  id="anonymous-tracing">
 			<CirclesSvg className="top-left" />
 			<div className="container columns">
 				<div className="column">
