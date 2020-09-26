@@ -679,7 +679,7 @@ a {
   }
 
   @include respond-to(medium) {
-    padding: toRem(110) 0;
+    padding: 100px 0;
   }
 }
 
