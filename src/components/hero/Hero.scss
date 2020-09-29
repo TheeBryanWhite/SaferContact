@@ -16,6 +16,10 @@
 		padding-top: 42%;
 	}
 
+	@include respond-to(epic) {
+		padding-top: 36%;
+	}
+
 	video {
 		bottom: 0;
 		display: none;
