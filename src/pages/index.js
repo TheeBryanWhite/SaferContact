@@ -17,7 +17,7 @@ const IndexPage = ({data}) => {
   
   return (
     <Layout>
-      <SEO title="Home" description="Site description" />
+      <SEO title="safercontact - Home" description="An anonynous contact tracing appliance to keep your employees safe and helthy from COVID-19" />
       <Hero heroData={data.poster} />
       <ElevatorPitch />
       <AnonymousTracing atData={data.anonymousTracing} />
