@@ -118,7 +118,7 @@ export default class ContactForm extends React.Component {
             }
 
             axios.post(
-                '', formData, {
+                'https://scmailsend.azurewebsites.net/send', formData, {
                 headers: { 
                 'Accept': 'application/json; charset=utf-8',
                 'Content-Type': 'application/json; charset=UTF-8'

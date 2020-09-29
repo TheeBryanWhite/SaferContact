@@ -42,8 +42,8 @@ module.exports = {
       }
     ],
     phone: '(555) 555-5555',
-    siteUrl: 'https://www.safercontact.com',
-    subtitle: 'Dynamic Contact Tracing Solution',
+    siteUrl: 'https://localhost:3000',
+    subtitle: 'Dynamic Contact Tracing Solutions',
     title: 'safercontact',
   },
   plugins: [
@@ -89,6 +89,7 @@ module.exports = {
         routeChangeEventName: "gatsby-route-change",
       },
     },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'Safercontact website',
@@ -134,14 +135,6 @@ module.exports = {
     },    
     'gatsby-plugin-sass',
     'gatsby-plugin-sharp',
-    {
-      resolve: 'gatsby-plugin-sitemap',
-      options: {
-        exclude: [
-          '/preview',
-        ],
-      },
-    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
