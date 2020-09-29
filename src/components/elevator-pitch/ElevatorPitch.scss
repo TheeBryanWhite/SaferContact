@@ -5,6 +5,7 @@
 	color: color(white);
 	font-family: family(heavy);
 	font-size: toRem(18);
+	font-weight: 700;
 	position: relative;
 
 	@include respond-to(medium) {

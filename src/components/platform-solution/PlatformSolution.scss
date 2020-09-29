@@ -1,11 +1,12 @@
 @import "../sass/mixins.scss";
 
-.platform-solution {
+.solution {
 	color: color(blue);
 	position: relative;
 
 	h2 {
 		font-family: family(heavy);
+		font-weight: 700;
 
 		@include respond-to(large) {
 			font-size: toRem(40);

@@ -41,7 +41,7 @@ const SlideNav = props => {
 		}
 	}
 
-	const stopAutoSlide = intervalHandler(autoSlide, 5000)
+	const stopAutoSlide = intervalHandler(autoSlide, 8000)
 
 	return(
 		<div className="slide-nav">

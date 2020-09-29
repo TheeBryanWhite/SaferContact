@@ -31,14 +31,14 @@ module.exports = {
         link: '/#anonymous-tracing'
       },
       {
-        class: 'platform-solution',
-        name: 'Platform Solution',
-        link: '/#platform-solution'
+        class: 'solution',
+        name: 'Solution',
+        link: '/#solution'
       },
       {
-        class: 'product-features',
-        name: 'Product Features',
-        link: '/#product-features'
+        class: 'features',
+        name: 'Features',
+        link: '/#features'
       },
       {
         class: 'contact-us',
@@ -80,18 +80,18 @@ module.exports = {
     //     routeChangeEventName: "gatsby-route-change",
     //   },
     // },
-    // {
-    //   resolve: 'gatsby-plugin-manifest',
-    //   options: {
-    //     name: 'ThreePoint Collective Starter',
-    //     short_name: 'ThreePoint',
-    //     start_url: '/',
-    //     background_color: '#000',
-    //     theme_color: '#fff',
-    //     display: 'minimal-ui',
-    //     icon: 'src/images/triangle.png', // This path is relative to the root of the site.
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Safercontact website',
+        short_name: 'Safercontact',
+        start_url: '/',
+        background_color: '#000',
+        theme_color: '#fff',
+        display: 'minimal-ui',
+        icon: 'src/images/favicon.png',
+      },
+    },
     // 'gatsby-plugin-offline',
     // 'gatsby-plugin-react-helmet',
     // {

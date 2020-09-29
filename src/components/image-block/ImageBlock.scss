@@ -23,6 +23,7 @@
 	h2 {
 		font-family: family(heavy);
 		font-size: 6vw;
+		font-weight: 700;
 		margin: 0;
 
 		@include respond-to(large) {

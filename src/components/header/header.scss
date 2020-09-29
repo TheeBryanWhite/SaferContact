@@ -3,21 +3,16 @@
 header {
 	background-color: color(gray);
 
-	.super-header {
-		align-items: center;
-		color: color(orange);
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		padding: toRem(25) 0;
+	.logo {
+		width: 65%;
 
 		@include respond-to(small) {
-			justify-content: space-between;
+			width: 35%;
 		}
-	}
 
-	.logo {
-		width: 250px;
+		@include respond-to(large) {
+			width: 15%;
+		}
 	}
 
 	h1,

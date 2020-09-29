@@ -16,12 +16,14 @@
 
 		@include respond-to(small) {
 			flex: 1 0 50%;
+			margin: 0;
 			padding: 0 toRem(16);
 		}
 	}
 
 	h2 {
 		font-family: family(heavy);
+		font-weight: 700;
 
 		@include respond-to(large) {
 			font-size: toRem(34);

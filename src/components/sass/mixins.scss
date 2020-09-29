@@ -638,13 +638,8 @@ $fonts: (
 //  */
 
 $weights: (
-    light: 300,
     normal: 400,
-    medium: 500,
-    semibold: 600,
     bold: 700,
-    xbold: 800,
-    black: 900
 );
 
 @function fw($key) {

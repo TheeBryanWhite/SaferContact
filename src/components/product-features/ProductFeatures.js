@@ -6,10 +6,10 @@ import CirclesSvg from '../../svg/circles.svg'
 
 const ProductFeatures = () => {
 	return (
-		<section className="product-features blue-bg pad-this" id="product-features">
+		<section className="product-features blue-bg pad-this" id="features">
 			<CirclesSvg className="top-right" />
 			<div className="container">
-				<h2>Platform Features</h2>
+				<h2>Features</h2>
 			
 				<div className="features">
 					<div className="feature">

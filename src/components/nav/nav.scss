@@ -3,7 +3,6 @@
 nav {
 	background-color: color(orange);
 	box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5);
-	padding: toRem(33);
 	position: relative;
 
 	&.fixed {
@@ -11,6 +10,26 @@ nav {
 		top: 0;
 		width: 100%;
 		z-index: z(mobile-nav);
+	}
+
+	.container {
+		align-items: center;
+		display: flex;
+		height: 75px;
+	}
+
+	.logo {
+		@include respond-to(large) {
+			margin-right: toRem(25);
+		}
+
+		h1 {
+			font-size: 0;
+			margin: 0;
+		}
+		svg {
+			fill: color(white);
+		}
 	}
 
 	ul {
@@ -21,7 +40,7 @@ nav {
 		display: flex;
 		flex-direction: column;
 		flex-wrap: wrap;
-		font-size: toRem(24);
+		font-size: toRem(20);
 		justify-content: flex-start;
 		left: 0;
 		position: absolute;
@@ -33,6 +52,10 @@ nav {
 			flex-direction: row;
 			position: static;
 		}
+
+		@include respond-to(xlarge) {
+			font-size: toRem(24);
+		}
 	}
 
 	li {
@@ -40,7 +63,6 @@ nav {
 		width: 100%;
 
 		@include respond-to(large) {
-			margin: 0 toRem(10);
 			width: auto;
 		}
 	}
@@ -55,6 +77,7 @@ nav {
 
 		@include respond-to(large) {
 			padding: 0;
+			text-align: center;
 		}
 
 		&.active {
@@ -73,7 +96,7 @@ nav {
 		@include respond-to(large) {
 			padding: 0;
 			position: absolute;
-			right: 0;
+			right: toRem(32);
 		}
 
 		a {
@@ -100,6 +123,7 @@ nav {
 		z-index: z(mobile-nav);
 
 		@include respond-to(large) {
+			display: flex;
 			position: static;
 			width: auto;
 		}

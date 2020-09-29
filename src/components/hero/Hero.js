@@ -7,6 +7,7 @@ import HeroOgv from './video/hero.ogv'
 import LogoSvg from '../../svg/logo-full.svg'
 
 const Hero = props => {
+
 	return (
 		<BackgroundImage
 			className="hero"

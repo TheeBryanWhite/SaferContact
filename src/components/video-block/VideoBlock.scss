@@ -30,6 +30,7 @@
 	h2 {
 		font-family: family(heavy);
 		font-size: 4vw;
+		font-weight: 700;
 
 		@include respond-to(medium) {
 			font-size: 4vw;

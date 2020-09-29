@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { connect } from 'react-redux'
 import { 
   setActiveSection,
@@ -8,6 +8,7 @@ import { Link } from 'gatsby'
 import window from 'global/window'
 
 import Hamburger from './hamburger'
+import LogoSvg from '../../svg/logo.svg'
 import MobileClose from './mobile-close'
 import './nav.scss'
 
@@ -16,34 +17,27 @@ const Nav = props => {
 		props.setMenu(props.menuState)
   }
 
-  const getHeader = () => {
-    const header = document.getElementsByTagName('header')
-    return [].slice.call(header)
-  }
-
-  const sectionObj = scrollDir => {
+  const sectionObj = () => {
     const sections = document.getElementsByTagName('section')
     const sectionsArr = [].slice.call(sections)
 
-    let sectionsFinal = null
-
-    if (scrollDir === 'down') {
-      sectionsFinal = sectionsArr
-    } else {
-      sectionsFinal = sectionsArr.reverse()
-    }
-
-    return sectionsFinal
+    return sectionsArr
   }
 
-  const isInViewport= element => {
+  const isInViewport= (element, upDown) => {
     const rect = element.getBoundingClientRect();
-    const bottomThreshold = (window.innerHeight - window.innerHeight * .85)
-    const topThreshold = (window.innerHeight - window.innerHeight * .75)
-    const inView = (
-      rect.top  + topThreshold >= 0 &&
-      rect.bottom - bottomThreshold <= (window.innerHeight || document.documentElement.clientHeight)
-    )
+    let inView = null
+
+    if (upDown) {
+      inView = (
+        rect.top <= window.innerHeight * .33
+      )
+    } else {
+      inView = (
+        rect.bottom <= window.innerHeight * .33
+      )
+    }
+    
     if (inView) {
       return {"id": element.id, "inView": inView}
     }
@@ -53,6 +47,10 @@ const Nav = props => {
     let theSections = null
 
     sections.forEach(section => {
+      if (typeof section === 'undefined' || section.id.length === 0) {
+        return false
+      }
+
       if (
         typeof section !== 'undefined' && 
         section.id.length !== null &&
@@ -71,26 +69,42 @@ const Nav = props => {
   const scrollDirection = () => {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     if (scrollTop > lastScrollTop){
-        scrollDirections = 'down'
+        scrollDirections = false // scroll down
     } else {
-      scrollDirections = 'up'
+      scrollDirections = true // scroll up
     }
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     return scrollDirections
   }
 
-  window.onscroll = () => {
-    if (!props.fixNav && window.pageYOffset > getHeader()[0].getBoundingClientRect().bottom) {
-      props.setFixNav(props.fixNav)
+  const setNavItemWidth = navItem => {
+    const links = document.getElementsByClassName('link-container')
+    const linksArr = [].slice.call(links)
+    const bpLarge = 1024
+    const bpXlarge = 1280
+
+    let widthOffset = null
+
+    if (window.innerWidth >= bpLarge) {
+      widthOffset = 30
+
+      if (window.innerWidth >= bpXlarge) {
+        widthOffset = 35
+      }
+
+      linksArr.forEach(link => {
+        link.style.width = (link.offsetWidth + widthOffset) + 'px'
+      })
     }
-    
-    if (props.fixNav && window.pageYOffset < getHeader()[0].getBoundingClientRect().bottom) {
-      props.setFixNav(props.fixNav)
-    }
-    
+  }
+  useEffect(() => {
+    setNavItemWidth()
+  }, [])
+
+  window.onscroll = () => {    
     let activeSections = []
-    sectionObj(scrollDirection()).forEach(section => {
-      activeSections.push(isInViewport(section))
+    sectionObj().forEach(section => {
+      activeSections.push(isInViewport(section, scrollDirection()))
     })
 
     let activeSection = theActiveSection(activeSections)
@@ -113,13 +127,16 @@ const Nav = props => {
   }
   
   return (
-    <nav className={(props.fixNav ? 'fixed' : '')}>
+    <nav className="fixed">
       <div className="container">
+        <div className="logo">
+          <h1><Link to="/"><LogoSvg /><span className="screen-reader-text">safercontact</span></Link></h1>
+        </div>
         <div className={`${props.menuState ? 'active-menu nav-closure' : 'nav-closure'}`}>
           <ul>{
             props.navData.map((navItem, index) => (
             <li 
-              className={navItem.class}
+              className={`link-container ${navItem.class}`}
               key={index}
               >
                 <Link
@@ -127,7 +144,7 @@ const Nav = props => {
                   onClick={() => { clickHandler() }}
                   to={navItem.link}
                 >
-                  {navItem.name}
+                  <span>{navItem.name}</span>
                 </Link>
               </li>
             ))
