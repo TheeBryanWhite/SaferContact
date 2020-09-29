@@ -11,7 +11,8 @@ header {
 		}
 
 		@include respond-to(large) {
-			width: 15%;
+			transform: translateY(3px);
+			width: 18%;
 		}
 	}
 
