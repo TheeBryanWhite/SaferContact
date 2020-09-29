@@ -99,6 +99,10 @@ nav {
 			right: toRem(32);
 		}
 
+		@include respond-to(xlarge) {
+			right: 0;
+		}
+
 		a {
 			background-color: rgba(color(white), 0.3);
 			border: 1px solid color(white);
