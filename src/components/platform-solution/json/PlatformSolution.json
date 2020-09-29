@@ -2,12 +2,12 @@
 	{
 		"id": "0",
 	   	"title":"Tag Recognition",
-	   	"body":"When Tag 1 comes into range of Tag 2, they synchronize and add to contact lists. Tags will alert users if they are closer than 6 feet of other devices through both audible and visual cues."
+	   	"body":"When a Tag comes into range of another Tag, they synchronize and add to their contact lists. Tags will alert users if they are closer than allowed through both audible and visual cues."
 	},
 	{
 		"id": "1",
 	   	"title":"Data Upload Cycle",
-	   	"body":"When a Tracing Tag gets within the range of a gateway it uploads the contact list to the Safercontact platform dashboard stored on dedicated and secure cloud environments."
+	   	"body":"When a Tag gets within the range of a gateway it uploads the contact list to the safercontact application dashboard stored on a dedicated and secure cloud environment."
 	},
 	{
 		"id": "2",

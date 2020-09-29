@@ -1,6 +1,7 @@
 @import "../sass/mixins.scss";
 
-.hero {
+.hero,
+.subpage-hero {
 	color: color(white);
 	height: 0;
 	overflow: hidden;
@@ -43,10 +44,10 @@
 
 	h1 {
 		display: inline-block;
-		width: 45%;
+		width: 65%;
 
 		@include respond-to(large) {
-			width: 35%;
+			width: 425px;
 		}
 	}
 
@@ -57,11 +58,11 @@
 		margin: 0 0 25px;
 
 		@include respond-to(medium) {
-			margin: 50px 0;
+			margin: 10px 0 35px;
 		}
 
 		@include respond-to(xlarge) {
-			font-size: 56px;
+			font-size: toRem(56);
 		}
 	}
 
@@ -70,7 +71,7 @@
 
 
 		@include respond-to(medium) {
-			font-size: 2vw;
+			font-size: toRem(24);
 		}
 	}
 
@@ -90,5 +91,11 @@
 		@include respond-to(small) {
 			font-size: toRem(20);
 		}
+	}
+}
+
+.subpage-hero {
+	@include respond-to(medium) {
+		padding-top: 35%;
 	}
 }

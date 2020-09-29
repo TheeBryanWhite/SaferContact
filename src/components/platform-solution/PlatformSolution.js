@@ -15,7 +15,7 @@ const PlatformSolution = props => {
 			<div className="container columns">
 				<div className="column body">
 					<h2>How it Works</h2>
-					<p>Safercontact utilizes both ultra-wideband (UWB) devices and Bluetooth Low Energy (BLE) devices and gateways to monitor proximity and duration of closeness. Each device captures real-time proximity data and maintains a contact list of interactions with other devices. When the device comes within range of a gateway, the contact list syncs with the Safercontact application. The Safercontact platform allows authorized users to quickly and effectively identify potential exposure and risk. Dedicated cloud environments store the Safercontact data. Whether you have 5 employees or 50,000, Safercontact will be able to provide a solution.</p>
+					<p>Safercontact utilizes dedicated Tracing Tags, either ultra-wideband (UWB) and/or Bluetooth Low Energy (BLE), along with gateways to monitor proximity and duration of closeness. Each Tag captures real-time proximity data and maintains a contact list of interactions with other Tags. When the Tag comes within range of a gateway, the contact list syncs with the safercontact application. The safercontact application allows authorized users to quickly and effectively identify potential exposure and risk. Dedicated cloud environments store the safercontact data. Whether you have 5 employees or 50,000, safercontact is the solution.</p>
 					<p><small>Get in touch with the Safercontact team to see how they can help your business get back safely.</small></p>
 					<p className="cta"><Link to="/#contact-us">Contact Sales Team</Link></p>
 				</div>

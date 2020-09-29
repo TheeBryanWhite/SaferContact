@@ -21,13 +21,13 @@ const ProductFeatures = () => {
 					<div className="feature">
 						<div className="wrapper">
 							<h3>Secure Identity Protection</h3>
-							<p>Each employees’ tag contains an anonymized I.D. that records social distance and duration of encounter to other tags. Location of tag is traced not tracked.</p>
+							<p>Each employees’ tag contains an anonymized I.D. that records the social distance and duration of encounters with other tags. The location of tags is traced not tracked.</p>
 						</div>
 					</div>
 					<div className="feature">
 						<div className="wrapper">
 							<h3>Dedicated Devices</h3>
-							<p>Personal security and privacy is of the utmost importance. The use of dedicated UWB tags and devices offer a more secure and accurate solution over smartphone applications.</p>
+							<p>Personal security and privacy is of the utmost importance. The use of dedicated UWB/BLE tags offers a more secure and accurate solution over smartphone applications. Safercontact supports a range of UWB &amp; BLE Tags ensuring the right choice for any situation.</p>
 						</div>
 					</div>
 					<div className="feature">

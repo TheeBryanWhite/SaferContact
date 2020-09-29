@@ -21,11 +21,6 @@ module.exports = {
         link: '/#home'
       },
       {
-        class: 'about',
-        name: 'About',
-        link: '/#about'
-      },
-      {
         class: 'anonymous-tracing',
         name: 'Anonymous Tracing',
         link: '/#anonymous-tracing'
