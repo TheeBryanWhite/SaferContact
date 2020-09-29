@@ -54,7 +54,7 @@ const ProductFeatures = () => {
 							<p>With Safercontact you only pay for the number of employees or devices that you need on an annual or monthly subscription basis. Let our sales team recommend a solution for your business needs.</p>
 						</div>
 					</div>
-					<p className="cta"><Link to="/#platform-solution">Learn More</Link></p>
+					<p className="cta"><Link to="/#solution">Learn More</Link></p>
 				</div>
 			</div>
 			<CirclesSvg className="bottom-left" />
