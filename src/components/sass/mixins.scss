@@ -614,8 +614,8 @@ $z-index: (
     @return null;
 }
 
-$base-stack: "Futura PT Book", futura-pt, Helvetica, Arial, sans-serif;
-$heavy-stack: "Futura PT Heavy", futura-pt, Helvetica, Arial, sans-serif;
+$base-stack: futura-pt, Helvetica, Arial, sans-serif;
+$heavy-stack: futura-pt, Helvetica, Arial, sans-serif;
 
 $fonts: (
     base: $base-stack,
