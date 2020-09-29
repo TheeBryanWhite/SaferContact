@@ -19,7 +19,7 @@ const ContactUs = () => {
 					<div className="demo">
 						<h2><ScheduleSvg />Schedule a Demo</h2>
 						<p>Book a Demo today to see how Safercontact can provide a secure, accurate, scalable, and anonymous contact tracing  solution for your company.</p>
-						<p className="cta"><a href="/">Book a Demo Today</a></p>
+						<p className="cta"><a href="https://outlook.office365.com/owa/calendar/safercontact@skylytics.com/bookings/" target="_blank" rel="noreferrer">Book a Demo Today</a></p>
 					</div>
 				</div>
 				<div className="column contact-form">

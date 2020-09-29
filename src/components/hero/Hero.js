@@ -29,7 +29,7 @@ const Hero = props => {
 					<h1><LogoSvg /><span className="screen-reader-text">Safercontact, dynamic contact tracing solution</span></h1>
 					<h2>Providing a more secure, accurate, scalable, and anonymous contact tracing solution.</h2>
 					<p>Get in touch with the safercontact team to see how we can help your business get back to work safely.</p>
-					<p className="cta"><a href="/" target="_blank" rel="noreferrer">Book a Demo Today</a></p>
+					<p className="cta"><a href="https://outlook.office365.com/owa/calendar/safercontact@skylytics.com/bookings/" target="_blank" rel="noreferrer">Book a Demo Today</a></p>
 				</div>
 			</div>
 		</BackgroundImage>
