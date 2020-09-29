@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import BackgroundImage from 'gatsby-background-image'
 
 import './Hero.scss'
