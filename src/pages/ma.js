@@ -2,24 +2,24 @@ import React from 'react'
 import {graphql} from 'gatsby'
 
 import SubpageHero from '../components/hero/SubpageHero'
-import DefaultBody from '../components/default-body/DefaultBody'
+import MaBody from '../components/default-body/MaBody'
 
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
 
-const LegalPage = ({data}) => {
+const MaPage = ({data}) => {
   
   return (
     <Layout>
       <SEO title="Home" description="Site description" />
-      <SubpageHero heroData={data.poster} pageTitle="Legal, Privacy Policy, &amp; Terms &amp; Conditions" />
-      <DefaultBody />
+      <SubpageHero heroData={data.poster} pageTitle="Master Agreement" />
+      <MaBody />
     </Layout>
   )
 }
 
-export const legalQuery = graphql`
-query legalQuery {
+export const maQuery = graphql`
+query maQuery {
   poster: file(relativePath: {eq: "images/hero.png"}) {
     childImageSharp {
       fluid(maxWidth: 1920) {
@@ -30,4 +30,4 @@ query legalQuery {
 }
 `
 
-export default LegalPage
+export default MaPage

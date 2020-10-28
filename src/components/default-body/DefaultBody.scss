@@ -1,27 +1,14 @@
 @import "../sass/mixins.scss";
 
-.elevator-pitch {
-	background-color: color(orange);
-	color: color(white);
-	font-family: family(heavy);
-	font-size: toRem(18);
-	font-weight: 400;
-	position: relative;
+.page-body {
 
-	h2 {
-		font-weight: 700;
-		@include respond-to(medium) {
-			font-size: toRem(28);
-		}
-	
-		@include respond-to(large) {
-			font-size: toRem(34);
-		}
-	}
+	ol {
+		ol {
+			list-style-type: lower-alpha;
 
-	p {
-		font-family: family(heavy);
-		font-size: toRem(22);
-		font-weight: 400;
+			ol {
+				list-style-type: lower-roman;
+			}
+		}
 	}
 }

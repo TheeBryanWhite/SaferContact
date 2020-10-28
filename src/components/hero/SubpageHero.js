@@ -14,7 +14,7 @@ const Hero = props => {
 		>
 			<div className="overlay">
 				<div className="body container">
-					<h2>Legal, Privacy Policy, &amp; Terms &amp; Conditions</h2>
+					<h2>{props.pageTitle}</h2>
 				</div>
 			</div>
 		</BackgroundImage>
