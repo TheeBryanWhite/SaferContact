@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './DefaultBody.scss'
-
+ 
 const MaBody = () => {
 	return(
 		<section className="page-body pad-this" id="msa">
