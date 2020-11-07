@@ -1,6 +1,6 @@
 import React from 'react'
 import Nav from '../nav/nav'
-import LinkBar from './LinkBar'
+import LinkBar from './link-bar'
 
 import './header.scss'
 
