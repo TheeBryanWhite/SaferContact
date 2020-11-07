@@ -1,12 +1,12 @@
 import React from 'react'
 
 import './DefaultBody.scss'
-
+ 
 const MaBody = () => {
 	return(
 		<section className="page-body pad-this" id="msa">
 			<div className="container">
-				<p>MASTER AGREEMENT (“<b>Agreement</b>”) dated as of ______________ (“<b>Effective Date</b>”) between Skylytics Data, LLC, a New Hampshire company with offices located at 402 Amherst Street, Suite 303, Nashua, New Hampshire 03063 (“<b>Skylytics</b>”), and __________________________________ (“<b>Client</b>”).</p>
+				<p>Important - Please read carefully; By signing up for Skylytic's service, you are acknowledging that you are an authorized by your organization to enter into this agreement, and if you are accepting on behalf of your employer or other entity("customer"), you represent and warrant that you have the legal right to bind said entity and agree to all the terms that are set forth as part of this agreement regarding customer's use of the Skylytic's service.  If you do not agree with the all the provisions described in this agreement or are not authorized to enter into this agreement, do not click on the "I AGREE", "I ACCEPT" or similar button, please click on the "I DISAGREE" button or close the window to cease the process of creating an account.</p>
 				<p>Skylytics and Client hereby agree as follows:</p>
 				<ol>
 					<li>
@@ -91,21 +91,6 @@ const MaBody = () => {
 						</ol>
 					</li>
 				</ol>
-				<p>IN WITNESS WHEREOF, the parties have caused this Agreement to be executed by their duly authorized representatives as of the Effective Date.</p>
-				<p>For Client:</p>
-				<p>
-					[CLIENT NAME]<br />
-					By:  ____________________________<br />
-					Name:  __________________________<br />
-					Title:  ___________________________<br />
-				</p>
-				<p>For Skylytics:</p>
-				<p>
-					<b>Skylytics Data, LLC</b><br />
-					By:  ____________________________<br />
-					Name:  __________________________<br />
-					Title:  ___________________________<br />
-				</p>
 			</div>
 		</section>
 	)
