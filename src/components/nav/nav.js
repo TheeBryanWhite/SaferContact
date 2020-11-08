@@ -7,6 +7,8 @@ import {
 import { Link } from 'gatsby'
 import window from 'global/window'
 
+import LinkBar from '../header/link-bar'
+
 import Hamburger from './hamburger'
 import LogoSvg from '../../svg/logo.svg'
 import MobileClose from './mobile-close'
@@ -128,6 +130,7 @@ const Nav = props => {
   
   return (
     <nav className="fixed">
+    	<LinkBar />
       <div className="container">
         <div className="logo">
           <h1><Link to="/"><LogoSvg /><span className="screen-reader-text">safercontact</span></Link></h1>
@@ -149,6 +152,7 @@ const Nav = props => {
               </li>
             ))
           }
+          <li><a href="http://www.skylytics.com/news">News</a></li>
           <li className="sign-in"><a href="http://app.safercontact.com/" target="_blank" rel="noreferrer">Sign In</a></li>
           </ul>
           <MobileClose />

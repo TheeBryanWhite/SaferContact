@@ -12,6 +12,26 @@ nav {
 		z-index: z(mobile-nav);
 	}
 
+	.link-bar {
+		background-color: color(black);
+		color: color(white);
+		font-size: toRem(18);
+		padding: toRem(8) 0;
+		text-align: right;
+	
+		p {
+			color: color(white);
+			flex: 1;
+			margin: 0;
+		}
+	
+		a {
+			color: color(white);
+			display: inline;
+			text-decoration: underline;
+		}
+	}
+
 	.container {
 		align-items: center;
 		display: flex;
