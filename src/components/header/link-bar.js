@@ -6,7 +6,7 @@ const LinkBar = () => {
 	return(
 		<div className="link-bar">
 			<div className="container">
-				<p>Visit <a href="https://www.skylytics.com" target="_blank" rel="noreferrer">Skylytics.com</a></p>
+				<p>visit <a href="https://www.skylytics.com" target="_blank" rel="noreferrer">Skylytics.com</a></p>
 			</div>
 		</div>
 	)	
