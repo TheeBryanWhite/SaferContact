@@ -69,4 +69,15 @@
 			}
 		}
 	}
+
+	a {
+
+		.cta {
+			@include cta;
+
+			&:hover {
+				@include ctahover;
+			}
+		}
+	}
 }

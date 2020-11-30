@@ -25,6 +25,17 @@
 		}
 	}
 
+	a {
+
+		.cta {
+			@include cta;
+
+			&:hover {
+				@include ctahover;
+			}
+		}
+	}
+
 	@include respond-to(small) {
 		.columns {
 			align-items: center;
