@@ -10,7 +10,7 @@ const VideoBlock = props => {
 	return(
 		<BackgroundImage
 			className="video-block"
-			fluid={props.vbData.childImageSharp.fluid}
+			fluid={props.vbImg.childImageSharp.fluid}
 			Tag="section"
 		>
 			<CirclesSvg className="top-right" />
@@ -25,7 +25,7 @@ const VideoBlock = props => {
 			</video>
 			<div className="overlay">
 				<div className="body container">
-					<h2>Safercontact Helps Protect The Health And Well&#8209;Being of Your Employees</h2>
+					<div dangerouslySetInnerHTML={{ __html: props.vbData.group[0].nodes[1].primary.onecol_text_body.html }} />
 				</div>
 			</div>
 			<CirclesSvg className="bottom-left" />

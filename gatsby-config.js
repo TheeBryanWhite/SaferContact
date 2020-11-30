@@ -56,15 +56,30 @@ module.exports = {
       }
     },
     'gatsby-background-image',
-    // Uncomment when Prismic repo is setup
-    // {
-    //   resolve: 'gatsby-source-prismic-graphql',
-    //     options: {
-    //       accessToken: '',
-    //       omitPrismicScript: true,
-    //       repositoryName: '',
-    //   }
-    // },
+    {
+      resolve: 'gatsby-source-prismic',
+      options: {
+        repositoryName: 'safer-contact',
+        accessToken: 'MC5YMnFPQkJJQUFDZ0FtNE02.SO-_ve-_vWlR77-977-9Ee-_ve-_vRHvv73vv73vv715Le-_ve-_ve-_ve-_ve-_ve-_vUfvv73vv73vv71477-9QFLvv73vv70',
+        linkResolver: ({ node, key, value }) => (doc) => {
+          if (doc.type === 'page') return "/" + doc.uid;
+
+          return "/doc/" + doc.id;
+        },
+        htmlSerializer: ({ node, key, value }) => (
+          type,
+          element,
+          content,
+          children,
+        ) => {
+          
+        },
+        // Remember, the schema names in the object have to match the API ID
+        schemas: {
+          page: require("./src/schemas/page.json"),
+        },
+      },
+    },
     {
       resolve: "gatsby-plugin-guess-js",
       options: {

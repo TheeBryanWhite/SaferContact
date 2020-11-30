@@ -47,11 +47,11 @@ const SlideNav = props => {
 		<div className="slide-nav">
 			<ul>
 			{
-			props.slideData.edges.map((figure, index) => (
+			props.slideData.group[0].nodes[0].items.map((figure, index) => (
 				<li
 					className={(props.activeSlide === index ? 'nav-pip active' : 'nav-pip')}
 					id={`nav-pip-${index}`} 
-					key={figure.node.id}
+					key={index}
 				>
 					<button disabled={(props.activeSlide === index ? true : false)} onClick={() => {clickHandler(index)}}>
 						<span className="screen-reader-text">{`Nav pip ${index}`}</span>

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import { connect } from 'react-redux'
 
 import Images from './images'
@@ -14,16 +13,12 @@ const PlatformSolution = props => {
 			<CirclesSvg className="top-left" />
 			<div className="container columns">
 				<div className="column body">
-					<h2>How it Works</h2>
-					<p>Safercontact utilizes dedicated Tracing Tags, either ultra-wideband (UWB) and/or Bluetooth Low Energy (BLE), along with gateways to monitor proximity and duration of closeness. Each Tag captures real-time proximity data and maintains a contact list of interactions with other Tags. When the Tag comes within range of a gateway, the contact list syncs with the safercontact application. The safercontact application allows authorized users to quickly and effectively identify potential exposure and risk. Dedicated cloud environments store the safercontact data. Whether you have 5 employees or 50,000, safercontact is the solution.</p>
-					<p><small>Get in touch with the Safercontact team to see how they can help your business get back safely.</small></p>
-					<p className="cta"><Link to="/#contact-us">Contact Sales Team</Link></p>
+					<div className="hero-title" dangerouslySetInnerHTML={{ __html: props.psData.group[0].nodes[0].primary.two_col_slider_body.html }} />
 				</div>
 				
 				<div className="column slider">
 					<Images
-						contentData={props.contentData}
-						imageData={props.psData}
+						contentData={props.psData}
 						activeSlide={props.activeSlide} 
 						inactiveSlide={props.inactiveSlide} 
 					/>

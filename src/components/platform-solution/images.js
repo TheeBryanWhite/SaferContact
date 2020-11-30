@@ -21,15 +21,15 @@ const Images = props => {
 	return(
 		<div className="slides">
 		{
-			props.imageData.edges.map((figure, index) => (
+			props.contentData.group[0].nodes[0].items.map((figure, index) => (
 				<div 
 					className={classBuilder(index)}
 					id={`slide-${index}`}
-					key={figure.node.id}>
-					<h3>{props.contentData[index].node.title}</h3>
-					<Image fluid={figure.node.childImageSharp.fluid} alt="Alt text for the image" />
+					key={index}>
+					<div dangerouslySetInnerHTML={{ __html: figure.slide_title.html }} />
+					<Image fluid={figure.slide_image.fluid} alt="Alt text for the image" />
 					<div className="slide-body">
-						<p>{props.contentData[index].node.body}</p>
+						<div dangerouslySetInnerHTML={{ __html: figure.slide_body.html }} />
 					</div>
 				</div>
 			))

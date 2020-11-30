@@ -18,17 +18,14 @@ const IndexPage = ({data}) => {
   return (
     <Layout>
       <SEO title="safercontact - Home" description="An anonynous contact tracing appliance to keep your employees safe and helthy from COVID-19" />
-      <Hero heroData={data.poster} />
-      <ElevatorPitch />
-      <AnonymousTracing atData={data.anonymousTracing} />
-      <VideoBlock vbData={data.vbPoster} />
-      <PlatformSolution 
-        contentData={data.allPlatformSolutionJson.edges}
-        psData={data.psImages}
-      />
-      <ProductFeatures />
-      <ImageBlock ibData={data.ibImage} />
-      <ContactUs />
+      <Hero heroData={data.allPrismicPageBodyHero} heroImg={data.poster} />
+      <ElevatorPitch aboutData={data.allPrismicPageBodyOneColumnText} />
+      <AnonymousTracing atData={data.allPrismicPageBodyTwoColumnWithImage} />
+      <VideoBlock vbData={data.allPrismicPageBodyOneColumnText} vbImg={data.vbPoster} />
+      <PlatformSolution psData={data.allPrismicPageBodyTwoColumnWithSlider} />
+      <ProductFeatures pfData={data.allPrismicPageBodyBoxGrid} />
+      <ImageBlock ibData={data.allPrismicPageBodyOneColumnText} ibImg={data.ibImage} />
+      <ContactUs cuData={data.allPrismicPageBodyFormBody} />
     </Layout>
   )
 }
@@ -42,6 +39,36 @@ query hpQuery {
       }
     }
   }
+  allPrismicPageBodyHero {
+    group(field: slice_type) {
+      nodes {
+        primary {
+          hero_title {
+            html
+          }
+          hero_subtitle {
+            html
+          }
+        }
+      }
+    }
+  }
+  allPrismicPageBodyTwoColumnWithImage {
+    group(field: slice_type) {
+      nodes {
+        primary {
+          two_col_body {
+            html
+          }
+          two_col_image {
+            fluid(maxWidth: 600) {
+              ...GatsbyPrismicImageFluid
+            }
+          }
+        }
+      }
+    }
+  }
   anonymousTracing: file(relativePath: {eq: "images/safercontact_anamyous_screen.png"}) {
     childImageSharp {
       fluid(maxWidth: 600) {
@@ -49,12 +76,79 @@ query hpQuery {
       }
     }
   }
-  allPlatformSolutionJson(sort: {fields: id, order: ASC}) {
-    edges {
-      node {
-        body
-        id
-        title
+  allPrismicPageBodyOneColumnText {
+    group(field: slice_type) {
+      nodes {
+        primary {
+          onecol_text_body {
+            html
+          }
+        }
+      }
+    }
+  }
+  allPrismicPageBodyTwoColumnWithSlider {
+    group(field: slice_type) {
+      nodes {
+        primary {
+          two_col_slider_body {
+            html
+          }
+        }
+        items {
+          slide_body {
+            html
+            raw
+            text
+          }
+          slide_title {
+            html
+          }
+          slide_image {
+            fluid(maxWidth: 800) {
+              ...GatsbyPrismicImageFluid
+            }
+          }
+        }
+      }
+    }
+  }
+  allPrismicPageBodyBoxGrid {
+    group(field: slice_type) {
+      nodes {
+        primary {
+          grid_cta {
+            html
+          }
+          grid_title {
+            html
+          }
+        }
+        items {
+          box_body {
+            html
+          }
+        }
+      }
+    }
+  }
+  allPrismicPageBodyFormBody {
+    group(field: slice_type) {
+      nodes {
+        primary {
+          demo_body {
+            html
+          }
+          demo_title {
+            text
+          }
+          mail_body {
+            html
+          }
+          mail_title {
+            text
+          }
+        }
       }
     }
   }
@@ -62,18 +156,6 @@ query hpQuery {
     childImageSharp {
       fluid(maxWidth: 1920) {
         ...GatsbyImageSharpFluid_withWebp
-      }
-    }
-  }
-  psImages: allFile(filter: {extension: {regex: "/(png)/"}, relativeDirectory: {eq: "images/product-features"}}, sort: {order: ASC, fields: childImageSharp___fluid___originalName}) {
-    edges {
-      node {
-        id
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
       }
     }
   }

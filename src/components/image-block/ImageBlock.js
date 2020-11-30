@@ -8,13 +8,13 @@ const ImageBlock = props => {
 	return(
 		<BackgroundImage
 			className="image-block"
-			fluid={props.ibData.childImageSharp.fluid}
+			fluid={props.ibImg.childImageSharp.fluid}
 			Tag="section"
 		>
 			<CirclesSvg className="top-left" />
 			<div className="overlay">
 				<div className="container body">
-					<h2>Safercontact Offers A Dynamic Solution That Is Secure, Accurate, Scalable, and Anonymous</h2>
+					<div dangerouslySetInnerHTML={{ __html: props.ibData.group[0].nodes[2].primary.onecol_text_body.html }} />
 				</div>
 			</div>
 			<CirclesSvg className="bottom-right" />
