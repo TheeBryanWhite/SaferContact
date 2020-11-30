@@ -4,7 +4,6 @@ import './ProductFeatures.scss'
 import CirclesSvg from '../../svg/circles.svg'
 
 const ProductFeatures = props => {
-	console.log(props.pfData)
 	return (
 		<section className="product-features blue-bg pad-this" id="features">
 			<CirclesSvg className="top-right" />
