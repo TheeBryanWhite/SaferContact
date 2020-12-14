@@ -1,0 +1,102 @@
+@import '../../../sass/mixins.scss';
+
+.contact-us {
+	input,
+    textarea {
+		background-color: color(white);
+		border: 0;
+        border-radius: 8px;
+        color: color(blue);
+        padding: 10px;
+        width: 100%;
+
+        &.invalid {
+            border: 2px solid color(validation-color);
+
+            &~ .validation-message {
+                display: block;
+            }
+        }
+
+        &.email-invalid {
+            border: 2px solid color(validation-color);
+
+            &~ .validation-email {
+                display: block;
+            }
+        }
+    }
+
+    input {
+		margin-bottom: toRem(16);
+		position: relative;
+	}
+	
+	textarea {
+		resize: none;
+	}
+
+    label {
+        @include screen-reader-text;
+	}
+
+	.submit-container {
+		margin-top: toRem(16);
+		text-align: right;
+		
+        button {
+			@include cta;
+			font-size: toRem(20);
+
+			&:hover {
+				@include ctahover;
+			}
+        }
+    }
+	
+	::-webkit-input-placeholder {
+		color: color(blue);
+		font-size: toRem(18);
+	  }
+	  ::-moz-placeholder {
+		color: color(blue);
+		font-size: toRem(18);
+	  }
+	  :-ms-input-placeholder {
+		color: color(blue);
+		font-size: toRem(18);
+	  }
+	  :-moz-placeholder {
+		color: color(blue);
+		font-size: toRem(18);
+	  }
+
+	.validation-message,
+    .validation-email {
+        color: color(validation-color);
+        display: none;
+        text-align: left;
+	}
+	
+	.postnobills {
+		display: none;
+	}
+
+	.flex-group {
+		display: flex;
+		flex-wrap: wrap;
+
+		.row {
+			flex: 0 0 50%;
+
+			&:nth-of-type(odd) {
+				padding-right: toRem(8);
+			}
+
+			&:nth-of-type(even) {
+				padding-left: toRem(8);
+			}
+		}
+
+	}
+}

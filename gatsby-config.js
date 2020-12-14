@@ -61,11 +61,8 @@ module.exports = {
       options: {
         repositoryName: 'safer-contact',
         accessToken: 'MC5YMnFPQkJJQUFDZ0FtNE02.SO-_ve-_vWlR77-977-9Ee-_ve-_vRHvv73vv73vv715Le-_ve-_ve-_ve-_ve-_ve-_vUfvv73vv73vv71477-9QFLvv73vv70',
-        linkResolver: ({ node, key, value }) => (doc) => {
-          if (doc.type === 'page') return "/" + doc.uid;
-
-          return "/doc/" + doc.id;
-        },
+        prismicToolbar: true,
+        linkResolver: () => (post) => `/${post.uid}`,
         htmlSerializer: ({ node, key, value }) => (
           type,
           element,

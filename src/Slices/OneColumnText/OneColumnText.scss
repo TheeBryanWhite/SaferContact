@@ -1,0 +1,92 @@
+@import "../../sass/mixins.scss";
+
+.one-column-text {
+	color: color(white);
+	font-family: family(heavy);
+	font-size: toRem(18);
+	font-weight: 400;
+	position: relative;
+
+	h2 {
+		font-weight: 700;
+		@include respond-to(medium) {
+			font-size: toRem(28);
+		}
+	
+		@include respond-to(large) {
+			font-size: toRem(34);
+		}
+	}
+
+	p {
+		font-family: family(heavy);
+		font-size: toRem(22);
+		font-weight: 400;
+	}
+
+	.container {
+		@include center;
+		width: 100%;
+	}
+
+	&.color-block {
+		padding: 60px 0;
+
+		.container {
+			left: 0;
+			position: relative;
+			transform: none;
+		}
+	}
+
+	&.video-block {
+		color: color(white);
+		height: 0;
+		overflow: hidden;
+		padding-top: 88%;
+		position: relative;
+
+		@include respond-to(medium) {
+			padding-top: 52%;
+		}
+	}
+
+	@include respond-to(large) {
+
+		.overlay {
+			padding-bottom: 52%;
+		}
+	}
+
+	video {
+		bottom: 0;
+		display: none;
+		height: auto;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: auto;
+
+		@include respond-to(medium) {
+			display: block;
+			width: 100%; 
+		}
+	}
+
+	&.image-block {
+		color: color(white);
+		height: 0;
+		overflow: hidden;
+		padding-top: 88%;
+		position: relative;
+	
+		@include respond-to(small) {
+			padding-top: 75%;
+		}
+	
+		@include respond-to(small) {
+			padding-top: 55%;
+		}
+	}
+}
