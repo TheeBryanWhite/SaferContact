@@ -687,33 +687,41 @@ a {
   }
 }
 
-.bottom-left {
+.odd-before {
   bottom: 0;
   left: 0;
   position: absolute;
   width: 9vw;
+  z-index: 1;
 }
 
-.bottom-right {
-  bottom: 0;
-  position: absolute;
-  right: 0;
-  transform: rotate(-90deg);
-  width: 9vw;
-}
-
-.top-left {
-  left: 0;
-  position: absolute;
-  top: 0;
-  transform: rotate(90deg);
-  width: 9vw;
-}
-
-.top-right {
+.odd-after {
   position: absolute;
   right: 0;
   top: 0;
   transform: rotate(180deg);
   width: 9vw;
+  z-index: 1;
+}
+
+.even-after {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  transform: rotate(-90deg);
+  width: 9vw;
+  z-index: 1;
+}
+
+.even-before {
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: rotate(90deg);
+  width: 9vw;
+  z-index: 1;
+}
+
+section:nth-of-type(2) .odd-after {
+  display: none;
 }

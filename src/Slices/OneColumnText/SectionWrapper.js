@@ -1,5 +1,6 @@
 import React from 'react'
 import BackgroundImage from 'gatsby-background-image'
+import CirclesSvg from '../../svg/circles.svg'
 
 const HasBackgroundImage = props => {
 	return(
@@ -9,7 +10,9 @@ const HasBackgroundImage = props => {
 			fluid={props.backgroundImage}
 			Tag="section"
 		>
+			<CirclesSvg className={`${props.place}-before`} />
 			{props.children}
+			<CirclesSvg className={`${props.place}-after`} />
 		</BackgroundImage>
 	)
 }
@@ -21,7 +24,9 @@ const HasBackgroundColor = props => {
 			id={props.sectionId} 
 			style={`background-color: ${props.backgroundColor}`}
 		>
+			<CirclesSvg className={`${props.place}-before`} />
 			{props.children}
+			<CirclesSvg className={`${props.place}-after`} />
 		</section>
 	)
 }
@@ -33,7 +38,9 @@ const HasBackgroundVideo = props => {
 			id={props.sectionId} 
 			style={`background-color: ${props.backgroundColor}`}
 		>
+			<CirclesSvg className={`${props.place}-before`} />
 			{props.children}
+			<CirclesSvg className={`${props.place}-after`} />
 		</section>
 	)
 }
@@ -44,7 +51,9 @@ const DefaultWrapper = props => {
 			className="one-column-text" 
 			id={props.sectionId}
 		>
+			<CirclesSvg className={`${props.place}-before`} />
 			{props.children}
+			<CirclesSvg className={`${props.place}-after`} />
 		</section>
 	)
 }
@@ -52,16 +61,16 @@ const DefaultWrapper = props => {
 const SectionWrapper = props => {
 		switch(props.blockType) {
 			case 'Color':
-				return <HasBackgroundColor backgroundColor={props.backgroundColor} children={props.children} sectionId={props.sectionId} />
+				return <HasBackgroundColor backgroundColor={props.backgroundColor} children={props.children} place={props.place} sectionId={props.sectionId} />
 
 			case 'Image':
-				return <HasBackgroundImage backgroundColor={props.backgroundColor} backgroundImage={props.backgroundImage} children={props.children} sectionId={props.sectionId} />
+				return <HasBackgroundImage backgroundColor={props.backgroundColor} backgroundImage={props.backgroundImage} children={props.children} place={props.place} sectionId={props.sectionId} />
 
 			case 'Video':
-				return <HasBackgroundVideo backgroundColor={props.backgroundColor} backgroundVideo={props.backgroundVIdeo} children={props.children} sectionId={props.sectionId} />
+				return <HasBackgroundVideo backgroundColor={props.backgroundColor} backgroundVideo={props.backgroundVIdeo} children={props.children} place={props.place} sectionId={props.sectionId} />
 		
 			default:
-				return <DefaultWrapper children={props.children} sectionId={props.sectionId} />
+				return <DefaultWrapper children={props.children} place={props.place} sectionId={props.sectionId} />
 		}
 }
 

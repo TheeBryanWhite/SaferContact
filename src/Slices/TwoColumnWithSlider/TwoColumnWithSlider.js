@@ -1,14 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
 import Images from './images'
 import SlideNav from './SlideNav'
-
+import CirclesSvg from '../../svg/circles.svg'
 import './TwoColumnWithSlider.scss'
 
 const PlatformSolution = props => {
 	return(
 		<section className="two-col-slider gradient-bg pad-this" id="solution">
+			<CirclesSvg className={`${props.place}-before`} />
 			<div className="container columns">
 				<div className="column body">
 					<div className="hero-title" dangerouslySetInnerHTML={{ __html: props.input.primary.two_col_slider_body.html }} />
@@ -23,6 +23,7 @@ const PlatformSolution = props => {
 					<SlideNav slideData={props.input.items} />
 				</div>
 			</div>
+			<CirclesSvg className={`${props.place}-after`} />
 		</section>
 	)
 }

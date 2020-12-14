@@ -12,6 +12,7 @@ const OneColumnText = props => {
 			backgroundImage={props.input.primary.one_col_text_background_image.fluid}
 			backgroundVideo={props.input.primary.one_col_text_video_mp4.url}
 			sectionId={props.input.primary.oncol_section_id}
+			place={props.place}
 		>
 			<VideoWrapper 
 				srcMp4={props.input.primary.one_col_text_video_mp4.url} 
