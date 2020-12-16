@@ -1,0 +1,163 @@
+@import "../../sass/mixins.scss";
+
+.two-col-slider {
+	color: color(blue);
+	position: relative;
+
+	h2 {
+		font-family: family(heavy);
+		font-weight: 700;
+
+		@include respond-to(large) {
+			font-size: toRem(40);
+		}
+	}
+
+	p {
+		font-size: toRem(20);
+	}
+
+	.cta {
+		display: inline-block;
+		margin-top: 20px;
+
+		a {
+			@include cta;
+
+			&:hover {
+				@include ctahover;
+			}
+		}
+	}
+
+	a {
+
+		.cta {
+			@include cta;
+
+			&:hover {
+				@include ctahover;
+			}
+		}
+	}
+
+	@include respond-to(small) {
+		.columns {
+			align-items: center;
+			display: flex;
+		}
+	}
+
+	.column {
+		margin: toRem(25) 0;
+		padding: 0 toRem(16);
+
+		@include respond-to(small) {
+			flex: 1 0 50%;
+		}
+
+		@include respond-to(large) {
+			&:nth-of-type(1) {
+				padding: 0;
+				padding-right: toRem(25);
+			}
+
+			&:nth-of-type(2) {
+				padding: 0;
+				padding-left: toRem(25);
+			}
+		}
+	}
+
+	.gatsby-image-wrapper {
+		margin: toRem(50) auto;
+		max-width: 300px;
+	}
+}
+
+.slides {
+	align-items: center;
+	display: flex;
+	flex-wrap: nowrap;
+	height: 600px;
+	overflow-x: hidden;
+	position: relative;
+
+	.slide {
+		opacity: 0;
+		position: absolute;
+		transition: opacity 0.6s linear;
+		transform: translateX(120%);
+		width: 100%;
+
+		&.active {
+			animation: cyclein 0.6s ease(in-out-quart) 1;
+			opacity: 1;
+			transform: translateX(0);
+		}
+
+		&.inactive {
+			animation: cycleout 1.2s ease(in-out-quart) 1;
+			opacity: 0;
+			transform: translateX(0);
+		}
+	}
+}
+
+@keyframes cyclein {
+	0% {
+		opacity: 0;
+		transform: translate(120%);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate(0);
+	}
+}
+
+@keyframes cycleout {
+	0% {
+		opacity: 1;
+		transform: translate(0);
+	}
+
+	50% {
+		opacity: 0;
+		transform: translate(-120%);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translate(120%);
+	}
+}
+
+.slide-nav {
+	ul {
+		display: flex;
+		justify-content: center;
+	}
+
+	button {
+		background-color: transparent;
+		border: 1px solid color(red);
+		border-radius: 50%;
+		cursor: pointer;
+		display: inline-block;
+		height: 20px;
+		margin: 10px;
+		transition: background-color 0.2s linear;
+		width: 20px;
+
+		&:focus {
+			outline: 0;
+		}
+	}
+
+	.active {
+		button {
+			background-color: color(red);
+		}
+	}
+}

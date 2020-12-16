@@ -1,3 +1,5 @@
+const linkResolver = require("./src/utils/linkResolver")
+
 module.exports = {
   siteMetadata: {
       address: {
@@ -56,15 +58,37 @@ module.exports = {
       }
     },
     'gatsby-background-image',
-    // Uncomment when Prismic repo is setup
-    // {
-    //   resolve: 'gatsby-source-prismic-graphql',
-    //     options: {
-    //       accessToken: '',
-    //       omitPrismicScript: true,
-    //       repositoryName: '',
-    //   }
-    // },
+    {
+      resolve: 'gatsby-source-prismic',
+      options: {
+        repositoryName: 'safer-contact',
+        accessToken: 'MC5YMnFPQkJJQUFDZ0FtNE02.SO-_ve-_vWlR77-977-9Ee-_ve-_vRHvv73vv73vv715Le-_ve-_ve-_ve-_ve-_ve-_vUfvv73vv73vv71477-9QFLvv73vv70',
+        prismicToolbar: true,
+        linkResolver: (doc) => linkResolver(doc),
+        htmlSerializer: ({ node, key, value }) => (
+          type,
+          element,
+          content,
+          children,
+        ) => {
+          
+        },
+        // Remember, the schema names in the object have to match the API ID
+        schemas: {
+          page: require("./src/schemas/page.json"),
+        },
+        imageImgixParams: {
+          auto: 'compress,format',
+          fit: 'max',
+          q: 50,
+        },
+        imagePlaceholderImgixParams: {
+          w: 100,
+          blur: 15,
+          q: 50,
+        },
+      },
+    },
     {
       resolve: "gatsby-plugin-guess-js",
       options: {

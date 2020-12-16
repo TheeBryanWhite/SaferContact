@@ -1,14 +1,19 @@
-import React from "react"
+import * as React from 'react'
+import { withUnpublishedPreview } from 'gatsby-source-prismic'
 
-import Layout from "../components/layout/layout"
-import SEO from "../components/seo"
+import Page from '../templates/Page'
+
+import Layout from '../components/layout/layout'
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <h1>Page not found!</h1>
   </Layout>
 )
 
-export default NotFoundPage
+// If an unpublished `page` document is previewed, PageTemplate will be rendered.
+export default withUnpublishedPreview(NotFoundPage, {
+  templateMap: {
+    page: Page,
+  },
+})

@@ -1,4 +1,4 @@
-@import "../sass/mixins.scss";
+@import "../../sass/mixins.scss";
 
 header {
 	background-color: color(gray);
@@ -40,10 +40,15 @@ header {
 	.link-bar {
 		background-color: color(black);
 		font-size: toRem(12);
-		padding: toRem(0) 0;
+		padding: toRem(8) 0;
 		text-align: right;
+
+		.container {
+			height: auto;
+		}
 	
 		p {
+			font-size: toRem(16);
 			margin: 0;
 		}
 	

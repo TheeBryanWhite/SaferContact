@@ -1,0 +1,92 @@
+@import "../../sass/mixins.scss";
+
+.box-grid {
+	position: relative;
+
+	@include respond-to(large) {
+		h2 {
+			font-size: toRem(38);
+		}
+
+		h3 {
+			font-size: toRem(33);
+		}
+
+		p {
+			font-size: toRem(20);
+		}
+	}
+
+	&.blue-bg {
+		background-color: color(blue);
+		color: color(white);
+	}
+
+	.features {
+		align-items: stretch;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.feature {
+		align-items: stretch;
+		display: flex;
+		flex: 0 0 50%;
+		padding: toRem(5);
+
+		@include respond-to(large) {
+			flex: 0 0 25%;
+		}
+	}
+
+	.wrapper {
+		border: 1px solid color(white);
+		flex: 1; 
+		padding: 10px 10px 0;
+	}
+
+	.cta {
+		align-self: center;
+		display: block;
+		text-align: center;
+
+		a {
+			@include cta;
+
+			&:hover {
+				@include ctahover;
+			}
+		}
+	}
+
+	a {
+		align-self: center;
+		display: block;
+		text-align: center;
+
+		.cta {
+			@include cta;
+
+			&:hover {
+				@include ctahover;
+			}
+		}
+	}
+
+	.grid-cta {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		width: 50%;
+
+		@include respond-to(large) {
+			width: 25%;
+		}
+	}
+
+	h2,
+	h3 {
+		font-family: family(heavy);
+		font-weight: 700;
+	}
+}

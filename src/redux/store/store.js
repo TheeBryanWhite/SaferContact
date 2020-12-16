@@ -1,5 +1,3 @@
-import React from 'react'
-import { Provider } from 'react-redux'
 import { 
   createStore, 
   applyMiddleware, 
@@ -20,4 +18,6 @@ const store = createStore(
 	)
 )
 
-export default ({ element }) => <Provider store={store}>{element}</Provider>
+export default store
+
+// export default ({ element }) => <Provider store={store}>{element}</Provider>

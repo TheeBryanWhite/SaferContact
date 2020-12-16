@@ -1,7 +1,45 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require('path')
 
-// You can delete this file if you're not using it
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+
+  // Query all Pages with their IDs and template data.
+  const pages = await graphql(`
+    {
+      allPrismicPage {
+        nodes {
+          id
+		      uid
+		      type
+        }
+      }
+    }
+  `)
+
+  const pageTemplates = {
+    page: path.resolve(__dirname, 'src/templates/Page.js'),
+  }
+
+  // Create pages for each Page in Prismic using the selected template.
+  pages.data.allPrismicPage.nodes.forEach((node) => {
+    if (node.uid === 'home') {
+      createPage({
+        path: '/',
+        component: pageTemplates[node.type],
+        context: {
+          id: node.id,
+          uid: node.uid
+        },
+      })
+    } else {
+      createPage({
+        path: `/${node.uid}`,
+        component: pageTemplates[node.type],
+        context: {
+          id: node.id,
+          uid: node.uid
+        },
+      })
+    }
+  })
+}
