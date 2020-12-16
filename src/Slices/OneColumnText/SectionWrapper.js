@@ -22,7 +22,7 @@ const HasBackgroundColor = props => {
 		<section 
 			className="one-column-text color-block" 
 			id={props.sectionId} 
-			style={`background-color: ${props.backgroundColor}`}
+			style={{backgroundColor: props.backgroundColor}}
 		>
 			<CirclesSvg className={`${props.place}-before`} />
 			{props.children}
