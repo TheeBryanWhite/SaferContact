@@ -22,13 +22,24 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Create pages for each Page in Prismic using the selected template.
   pages.data.allPrismicPage.nodes.forEach((node) => {
-    createPage({
-      path: `/${node.uid}`,
-      component: pageTemplates[node.type],
-      context: {
-        id: node.id,
-        uid: node.uid
-      },
-    })
+    if (node.uid === 'home') {
+      createPage({
+        path: '/',
+        component: pageTemplates[node.type],
+        context: {
+          id: node.id,
+          uid: node.uid
+        },
+      })
+    } else {
+      createPage({
+        path: `/${node.uid}`,
+        component: pageTemplates[node.type],
+        context: {
+          id: node.id,
+          uid: node.uid
+        },
+      })
+    }
   })
 }

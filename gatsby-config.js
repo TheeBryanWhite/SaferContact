@@ -64,7 +64,7 @@ module.exports = {
         repositoryName: 'safer-contact',
         accessToken: 'MC5YMnFPQkJJQUFDZ0FtNE02.SO-_ve-_vWlR77-977-9Ee-_ve-_vRHvv73vv73vv715Le-_ve-_ve-_ve-_ve-_ve-_vUfvv73vv73vv71477-9QFLvv73vv70',
         prismicToolbar: true,
-        linkResolver: () => linkResolver,
+        linkResolver: (doc) => linkResolver(doc),
         htmlSerializer: ({ node, key, value }) => (
           type,
           element,
@@ -77,8 +77,15 @@ module.exports = {
         schemas: {
           page: require("./src/schemas/page.json"),
         },
-        shouldDownloadImage: ({ node, key, value }) => {
-          return true
+        imageImgixParams: {
+          auto: 'compress,format',
+          fit: 'max',
+          q: 50,
+        },
+        imagePlaceholderImgixParams: {
+          w: 100,
+          blur: 15,
+          q: 50,
         },
       },
     },

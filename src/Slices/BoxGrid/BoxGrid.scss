@@ -59,6 +59,20 @@
 		}
 	}
 
+	a {
+		align-self: center;
+		display: block;
+		text-align: center;
+
+		.cta {
+			@include cta;
+
+			&:hover {
+				@include ctahover;
+			}
+		}
+	}
+
 	.grid-cta {
 		align-items: center;
 		display: flex;

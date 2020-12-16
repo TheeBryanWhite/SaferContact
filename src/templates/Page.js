@@ -48,7 +48,7 @@ query MyQuery {
             }
             hero_background_image {
               fluid(maxWidth: 1920) {
-                ...GatsbyPrismicImageFluid
+                src
               }
             }
             hero_video_mp4 {
@@ -78,8 +78,8 @@ query MyQuery {
               url
             }
             one_col_text_background_image {
-              fluid(maxWidth: 1920) {
-                ...GatsbyPrismicImageFluid
+              fluid(maxWidth: 1000, maxHeight: 800) {
+                src
               }
             }
           }

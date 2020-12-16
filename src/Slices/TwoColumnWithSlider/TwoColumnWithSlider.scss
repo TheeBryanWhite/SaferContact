@@ -17,11 +17,27 @@
 		font-size: toRem(20);
 	}
 
-	.cta a {
-		@include cta;
+	.cta {
+		display: inline-block;
+		margin-top: 20px;
 
-		&:hover {
-			@include ctahover;
+		a {
+			@include cta;
+
+			&:hover {
+				@include ctahover;
+			}
+		}
+	}
+
+	a {
+
+		.cta {
+			@include cta;
+
+			&:hover {
+				@include ctahover;
+			}
 		}
 	}
 

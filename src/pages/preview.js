@@ -6,7 +6,6 @@ import linkResolver from '../utils/linkResolver'
 import Layout from '../components/Layout/Layout'
 
 const PreviewPage = ({ isPreview, isLoading, previewData }) => {
-  console.log(previewData)
   if (isPreview === false) return 'Not a preview!'
 
   return (

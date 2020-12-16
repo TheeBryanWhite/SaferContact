@@ -1,5 +1,9 @@
 const linkResolver = ({ node, key, value }) => doc => {
-	if (doc.type === "page") {
+	if (doc.uid === 'home') {
+		return '/'
+	}
+
+	if (doc.type === 'page' && doc.uid !== 'home') {
 		return `/${doc.uid}`
 	}
 }
