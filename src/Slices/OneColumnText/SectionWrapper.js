@@ -3,7 +3,6 @@ import BackgroundImage from 'gatsby-background-image'
 import CirclesSvg from '../../svg/circles.svg'
 
 const HasBackgroundImage = props => {
-console.log(props)
 	return(
 		<BackgroundImage
 			backgroundColor={props.backgroundColor}

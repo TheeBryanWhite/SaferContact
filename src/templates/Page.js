@@ -23,7 +23,7 @@ const Page = ({ data: { prismicPage, pages }}) => {
 export default withPreview(Page)
 
 export const pageQuery = graphql`
-query allPages {
+query MyQuery {
   prismicPage {
     data {
       page_title {
@@ -78,12 +78,8 @@ query allPages {
               url
             }
             one_col_text_background_image {
-              localFile {
-                childImageSharp {
-                  fluid(maxWidth: 1920) {
-                    ...GatsbyImageSharpFluid_withWebp
-                  }
-                }
+              fluid(maxWidth: 1920) {
+                ...GatsbyPrismicImageFluid
               }
             }
           }
@@ -187,4 +183,5 @@ query allPages {
     id
   }
 }
+
 `
