@@ -3,6 +3,7 @@ import BackgroundImage from 'gatsby-background-image'
 import CirclesSvg from '../../svg/circles.svg'
 
 const HasBackgroundImage = props => {
+console.log(props)
 	return(
 		<BackgroundImage
 			backgroundColor={props.backgroundColor}
@@ -33,15 +34,16 @@ const HasBackgroundColor = props => {
 
 const HasBackgroundVideo = props => {
 	return(
-		<section 
-			className="one-column-text video-block" 
-			id={props.sectionId} 
-			style={`background-color: ${props.backgroundColor}`}
+		<BackgroundImage 
+			backgroundColor={props.backgroundColor}
+			className="one-column-text video-block"
+			fluid={props.backgroundImage}
+			Tag="section"
 		>
 			<CirclesSvg className={`${props.place}-before`} />
 			{props.children}
 			<CirclesSvg className={`${props.place}-after`} />
-		</section>
+		</BackgroundImage>
 	)
 }
 
@@ -67,7 +69,7 @@ const SectionWrapper = props => {
 				return <HasBackgroundImage backgroundColor={props.backgroundColor} backgroundImage={props.backgroundImage} children={props.children} place={props.place} sectionId={props.sectionId} />
 
 			case 'Video':
-				return <HasBackgroundVideo backgroundColor={props.backgroundColor} backgroundVideo={props.backgroundVIdeo} children={props.children} place={props.place} sectionId={props.sectionId} />
+				return <HasBackgroundVideo backgroundColor={props.backgroundColor} backgroundImage={props.backgroundImage} backgroundVideo={props.backgroundVIdeo} children={props.children} place={props.place} sectionId={props.sectionId} />
 		
 			default:
 				return <DefaultWrapper children={props.children} place={props.place} sectionId={props.sectionId} />

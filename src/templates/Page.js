@@ -1,28 +1,26 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import Helmet from "react-helmet"
 import { graphql } from 'gatsby'
+import { withPreview } from 'gatsby-source-prismic'
+import usePreviewData from '../utils/usePreviewData'
 import Layout from '../components/Layout/Layout'
 import SliceZone from '../components/SliceZone/SliceZone'
 
 const Page = ({ data: { prismicPage, pages }}) => {
   const { data } = prismicPage
+  const liveData = usePreviewData(data)
+
   return (
     <Layout>
-      <SliceZone allSlices={data.body} />
+      <Helmet>
+        <script async defer src="https://static.cdn.prismic.io/prismic.js?new=true&repo=safer-contact"></script>
+      </Helmet>
+      <SliceZone allSlices={liveData.body} />
     </Layout>
   )
 }
 
-export default Page
-
-Page.propTypes = {
-  data: PropTypes.shape({
-    prismicPage: PropTypes.object.isRequired,
-    pages: PropTypes.shape({
-      nodes: PropTypes.array.isRequired,
-    }),
-  }).isRequired,
-}
+export default withPreview(Page)
 
 export const pageQuery = graphql`
 query allPages {
@@ -80,8 +78,12 @@ query allPages {
               url
             }
             one_col_text_background_image {
-              fluid(maxWidth: 1920) {
-                ...GatsbyPrismicImageFluid
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 1920) {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
               }
             }
           }
