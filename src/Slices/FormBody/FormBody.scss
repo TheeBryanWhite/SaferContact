@@ -61,7 +61,21 @@
 	}
 
 	.cta {
+		display: inline-block;
+		margin-top: 20px;
+
 		a {
+			@include cta;
+
+			&:hover {
+				@include ctahover;
+			}
+		}
+	}
+
+	a {
+
+		.cta {
 			@include cta;
 
 			&:hover {
