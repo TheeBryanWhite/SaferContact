@@ -3,7 +3,7 @@ import Helmet from "react-helmet"
 import { graphql } from 'gatsby'
 import { withPreview } from 'gatsby-source-prismic'
 import usePreviewData from '../utils/UsePreviewData'
-import Layout from '../components/Layout/Layout.js'
+import {Layout} from '../components/Layout/Layout'
 import SliceZone from '../components/SliceZone/SliceZone'
 
 const Page = ({ data: { prismicPage, pages }}) => {

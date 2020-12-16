@@ -3,7 +3,7 @@ import { withUnpublishedPreview } from 'gatsby-source-prismic'
 
 import Page from '../templates/Page'
 
-import Layout from '../components/Layout/Layout.js'
+import {Layout} from '../components/Layout/Layout'
 
 const NotFoundPage = () => (
   <Layout>
