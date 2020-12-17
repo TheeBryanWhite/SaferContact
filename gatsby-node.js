@@ -7,37 +7,37 @@ exports.createPages = async ({ graphql, actions }) => {
   const pages = await graphql(`
     {
       allPrismicPage {
-        nodes {
-          id
-		      uid
-		      type
+        edges {
+          node {
+            id
+            uid
+          }
         }
       }
     }
   `)
 
-  const pageTemplates = {
-    page: path.resolve(__dirname, 'src/templates/Page.js'),
-  }
+  const pageList = pages.data.allPrismicPage.edges
 
-  // Create pages for each Page in Prismic using the selected template.
-  pages.data.allPrismicPage.nodes.forEach((node) => {
-    if (node.uid === 'home') {
+  const pageTemplate = require.resolve("./src/templates/Page.js")
+
+  pageList.forEach(edge => {  
+    const url = `/${edge.node.uid}`
+
+    if (url === '/home') {
       createPage({
         path: '/',
-        component: pageTemplates[node.type],
+        component: pageTemplate,
         context: {
-          id: node.id,
-          uid: node.uid
+          uid: edge.node.uid,
         },
       })
     } else {
       createPage({
-        path: `/${node.uid}`,
-        component: pageTemplates[node.type],
+        path: url,
+        component: pageTemplate,
         context: {
-          id: node.id,
-          uid: node.uid
+          uid: edge.node.uid,
         },
       })
     }

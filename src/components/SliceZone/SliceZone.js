@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Hero from '../../Slices/Hero/Hero'
+import SubpageHero from '../../Slices/SubpageHero/SubpageHero'
 import OneColumnText from '../../Slices/OneColumnText/OneColumnText'
 import TwoColumnWithImage from '../../Slices/TwoColumnWithImage/TwoColumnWithImage'
 import TwoColumnWithSlider from '../../Slices/TwoColumnWithSlider/TwoColumnWithSlider'
@@ -27,6 +28,8 @@ export default class SliceZone extends Component {
         // These are the API IDs of the slices
         case 'hero':
         	return <Hero key={slice.id} input={slice} />
+        case 'subpage_hero':
+          return <SubpageHero key={slice.id} input={slice} />
         case 'one_column_text':
         	return <OneColumnText key={slice.id} input={slice} place={evenOdd} />
         case 'two_column_with_image':

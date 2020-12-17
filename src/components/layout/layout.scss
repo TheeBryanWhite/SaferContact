@@ -726,6 +726,7 @@ a {
   z-index: 1;
 }
 
+section:last-child .odd-before,
 section:nth-of-type(2) .odd-after {
   display: none;
 }

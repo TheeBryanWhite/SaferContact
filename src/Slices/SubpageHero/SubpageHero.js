@@ -1,24 +1,23 @@
 import React from 'react'
 import BackgroundImage from 'gatsby-background-image'
 
-import './Hero.scss'
+import './SubpageHero.scss'
 
-const Hero = props => {
-
+const SubpageHero = props => {
 	return (
 		<BackgroundImage
 			className="subpage-hero"
-			fluid={props.heroData.childImageSharp.fluid}
+			fluid={props.input.primary.subhero_bg_image.fluid}
 			id="hero"
 			Tag="section"
 		>
 			<div className="overlay">
 				<div className="body container">
-					<h2>{props.pageTitle}</h2>
+					<div className="SUBhero-title" dangerouslySetInnerHTML={{ __html: props.input.primary.subhero_page_title.html }} />
 				</div>
 			</div>
 		</BackgroundImage>
 	)
 }
 
-export default Hero
+export default SubpageHero

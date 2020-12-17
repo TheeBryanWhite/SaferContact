@@ -24,6 +24,21 @@
 		font-weight: 400;
 	}
 
+	a {
+		color: color(white);
+	}
+
+	ul,
+	ol {
+		font-size: toRem(22);
+		margin-bottom: toRem(23);
+		padding-left: toRem(32);
+	}
+
+	ul {
+		list-style-type: disc;
+	}
+
 	.container {
 		@include center;
 		width: 100%;
