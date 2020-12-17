@@ -157,6 +157,12 @@
             "icon" : "looks_two",
             "display" : "list",
             "non-repeat" : {
+              "twocol_section_id" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Section ID"
+                }
+              },
               "two_col_image" : {
                 "type" : "Image",
                 "config" : {
@@ -185,6 +191,12 @@
             "icon" : "view_array",
             "display" : "list",
             "non-repeat" : {
+              "twocol_slider_section_id" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Section ID"
+                }
+              },
               "two_col_slider_body" : {
                 "type" : "StructuredText",
                 "config" : {
@@ -231,6 +243,12 @@
             "icon" : "view_comfy",
             "display" : "list",
             "non-repeat" : {
+              "box_grid_section_id" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Section ID"
+                }
+              },
               "grid_title" : {
                 "type" : "StructuredText",
                 "config" : {
@@ -267,6 +285,12 @@
             "icon" : "chrome_reader_mode",
             "display" : "list",
             "non-repeat" : {
+              "form_section_id" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Section ID"
+                }
+              },
               "mail_title" : {
                 "type" : "StructuredText",
                 "config" : {

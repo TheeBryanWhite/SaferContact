@@ -8,7 +8,7 @@ import CirclesSvg from '../../svg/circles.svg'
 
 const ContactUs = props => {
 	return(
-		<section className="contact-us pad-this gradient-bg" id="contact-us">
+		<section className="contact-us pad-this gradient-bg" id={props.input.primary.form_section_id}>
 			<CirclesSvg className={`${props.place}-before`} />
 			<div className="container columns">
 				<div className="column contact-body">

@@ -86,6 +86,7 @@ query MyQuery($uid: String!) {
               id
               slice_type
               primary {
+                twocol_section_id
                 two_col_body {
                   html
                   raw
@@ -119,6 +120,7 @@ query MyQuery($uid: String!) {
                 }
               }
               primary {
+                twocol_slider_section_id
                 two_col_slider_body {
                   html
                   raw
@@ -137,6 +139,7 @@ query MyQuery($uid: String!) {
                 }
               }
               primary {
+                box_grid_section_id
                 grid_cta {
                   html
                   raw
@@ -153,6 +156,7 @@ query MyQuery($uid: String!) {
               id
               slice_type
               primary {
+                form_section_id
                 demo_body {
                   html
                   raw

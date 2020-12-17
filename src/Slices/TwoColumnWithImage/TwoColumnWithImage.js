@@ -5,7 +5,7 @@ import './TwoColumnWithImage.scss'
 
 const AnonymousTracing = props => {
 	return(
-		<section className="two-col-image gradient-bg pad-this"  id="anonymous-tracing">
+		<section className="two-col-image gradient-bg pad-this"  id={props.input.primary.twocol_section_id}>
 			<CirclesSvg className={`${props.place}-before`} />
 			<div className="container columns">
 				<div className="column">

@@ -4,7 +4,7 @@ import './BoxGrid.scss'
 
 const ProductFeatures = props => {
 	return (
-		<section className="box-grid blue-bg pad-this" id="features">
+		<section className="box-grid blue-bg pad-this" id={props.input.primary.box_grid_section_id}>
 			<CirclesSvg className={`${props.place}-before`} />
 			<div className="container">
 				<div className="hero-title" dangerouslySetInnerHTML={{ __html: props.input.primary.grid_title.html }} />
