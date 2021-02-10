@@ -103,12 +103,16 @@ export default class ContactForm extends React.Component {
         if (!this.state.postnobills.length > 0) {
 
             const formData = {
-                "name": this.state.name.value,
-                "email": this.state.email.value,
-                "phone": this.state.phone.value,
-                "company": this.state.company.value,
-                "companysize": this.state.companysize.value,
-                "message": this.state.message.value
+                "personalizations": [
+                    {
+                        "name": this.state.name.value,
+                        "email": this.state.email.value,
+                        "phone": this.state.phone.value,
+                        "company": this.state.company.value,
+                        "companysize": this.state.companysize.value,
+                        "message": this.state.message.value
+                    }
+                ],
             }
 
             let isThisValid = this.validateForm();
