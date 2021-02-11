@@ -103,6 +103,9 @@ export default class ContactForm extends React.Component {
         if (!this.state.postnobills.length > 0) {
 
             const formData = {
+                "from": {
+                    "email": this.state.name.value
+                },
                 "personalizations": [
                     {
                         "to": [
@@ -116,12 +119,12 @@ export default class ContactForm extends React.Component {
                         "subject": `A new submission from the safercontact form ${this.state.name.value}`,
                         "content": [
                             {
-                                "name": this.state.name.value,
-                                "email": this.state.email.value,
-                                "phone": this.state.phone.value,
-                                "company": this.state.company.value,
-                                "companysize": this.state.companysize.value,
-                                "message": this.state.message.value
+                                "type": "text/plain",
+                                "value": `Name: ${this.state.name.value}\nEmail: ${this.state.email.value}\nPhone: ${this.state.phone.value}\nCompany: ${this.state.company.value}\nCompany Size: ${this.state.companysize.value}\nMessage: ${this.state.message.value}`
+                            },
+                            {
+                                "type": "text/html",
+                                "value": `Name: ${this.state.name.value}<br />Email: ${this.state.email.value}<br />Phone: ${this.state.phone.value}<br />Company: ${this.state.company.value}<br />Company Size: ${this.state.companysize.value}<br />Message: ${this.state.message.value}`
                             }
                         ]
                     }
