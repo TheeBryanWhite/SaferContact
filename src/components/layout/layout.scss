@@ -730,3 +730,14 @@ section:last-child .odd-before,
 section:nth-of-type(2) .odd-after {
   display: none;
 }
+
+.home-content {
+  text-align: center;
+  color: white;
+  font-size: 28px;
+  padding: 13vh 0;
+
+  h2 {
+    font-size: 50px;
+  }
+}
