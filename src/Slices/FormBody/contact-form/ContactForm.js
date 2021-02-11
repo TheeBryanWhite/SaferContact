@@ -105,12 +105,25 @@ export default class ContactForm extends React.Component {
             const formData = {
                 "personalizations": [
                     {
-                        "name": this.state.name.value,
-                        "email": this.state.email.value,
-                        "phone": this.state.phone.value,
-                        "company": this.state.company.value,
-                        "companysize": this.state.companysize.value,
-                        "message": this.state.message.value
+                        "to": [
+                            {
+                                "email": "info@safercontact.com"
+                            }
+                        ],
+                        "from": [
+                            {
+                                "email": this.state.email.value
+                            }
+                        ],
+                        "subject": `A new submission from the safercontact form ${this.state.name.value}`,
+                        "content": {
+                            "name": this.state.name.value,
+                            "email": this.state.email.value,
+                            "phone": this.state.phone.value,
+                            "company": this.state.company.value,
+                            "companysize": this.state.companysize.value,
+                            "message": this.state.message.value
+                        }
                     }
                 ],
             }
