@@ -104,7 +104,7 @@ export default class ContactForm extends React.Component {
 
             const formData = {
                 "from": {
-                    "email": "noreply@safercontact.com"
+                    "email": "info@safercontact.com"
                 },
                 "personalizations": [
                     {
@@ -114,7 +114,7 @@ export default class ContactForm extends React.Component {
                             }
                         ],
                         "from": {
-                            "email": "noreply@safercontact.com"
+                            "email": "info@safercontact.com"
                         },
                         "subject": `A new submission from the safercontact form ${this.state.name.value}`,
                     }
